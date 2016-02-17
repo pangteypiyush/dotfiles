@@ -1,7 +1,6 @@
-"custom {{{ 
+" custom core {{{ 
 set nocompatible
-set number
-set clipboard=unnamed
+"set clipboard=unnamedplus
 set tabstop=8
 set shiftwidth=8
 set sts=8
@@ -47,6 +46,22 @@ set background=dark
 colorscheme solarized
 "}}}u
 
+"{{{ relative to absolute row number
+set rnu
+function ToggleNumbersOn()	
+	set rnu!
+	set nu
+endfunction
+function ToggleRelativeOn()
+	set nu!
+	set rnu
+endfunction
+autocmd FocusLost * call ToggleNumbersOn()
+autocmd FocusGained * call ToggleRelativeOn()
+autocmd InsertEnter * call ToggleNumbersOn()
+autocmd InsertLeave * call ToggleRelativeOn()
+"}}}
+
 "for indent_guide.vim{{{
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
@@ -58,7 +73,7 @@ let g:indent_guides_start_level=2
 
 "for tagbar.vim{{{
 let g:tagbar_usearrows = 1
-let mapleader=" "
+"let mapleader="\"
 nnoremap <leader>l :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
@@ -91,16 +106,18 @@ nnoremap <leader>q :tabp<cr>
 "}}}
 
 "tags to be loaded for java{{{
-autocmd FileType java set tags=/home/fate/.vim/tags/java.tags"}}}
+autocmd FileType java set tags=/home/fate/.vim/tags/java.tags
+"}}}
 
 "tags for c {{{
-autocmd FileType c set tags=/home/fate/.vim/tags/c.tags"}}}
-
+"autocmd FileType c set tags=/home/fate/.vim/tags/c.tags
+"}}}
 
 "for airline{{{
 set encoding=utf-8
 set laststatus=2
-let g:airline_theme='solarized'
+let g:airline_theme='murmur'
+"old theme tommorow
 let g:airline#extensions#tagbar#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#tabline#enabled=1
@@ -124,7 +141,30 @@ let g:airline#extensions#tabline#left_alt_sep ="\ue0b1"
 "}}}
 
 "for gitgutter"{{{
-let g:gitgutter_sign_column_always=1
 let g:gitgutter_enabled=1
 let g:gitgutter_signs=1
-let g:gitgutter_highlight_lines=0"}}}
+let g:gitgutter_sign_column_always=1
+let g:gitgutter_highlight_lines=0
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+nmap <leader>hs <Plug>GitGutterStageHunk
+nmap <leader>hr <Plug>GitGutterRevertHunk
+nmap <leader>hv <Plug>GitGutterPreviewHunk
+nmap <leader>hn <Plug>GitGutterNextHunk
+nmap <leader>hp <Plug>GitGutterPrevHunk
+"}}}
+
+"for clearing Registers"{{{
+function! ClearRegisters()
+	redir => l:register_out
+	silent register
+	redir end
+	let l:register_list = split(l:register_out, '\n')
+	call remove(l:register_list, 0) " remove header (-- Registers --)
+	call map(l:register_list, "substitute(v:val, '^.\\(.\\).*', '\\1', '')")
+	call filter(l:register_list, 'v:val !~ "[%#=.:]"') " skip readonly registers
+	for elem in l:register_list
+		execute 'let @'.elem.'= ""'
+	endfor
+endfunction
+"}}}
