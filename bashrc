@@ -37,13 +37,12 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,15 +56,18 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[01;30m\] : \[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    #PS1="\n\[\e[30;1m\]\[\016\]l\[\017\](\[\e[34;1m\]\u@\h\[\e[30;1m\])-(\[\e[34;1m\]\j\[\e[30;1m\])-(\[\e[34;1m\]\@ \d\[\e[30;1m\])->\[\e[30;1m\]\n\[\016\]m\[\017\]-(\[\[\e[32;1m\]\w\[\e[30;1m\])-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\e[30;1m\])--> \[\e[0m\]"
-    #PS1="${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\[\e[38;5;242m\]\n(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[38;5;242m\])-(\[\e[38;5;254m\]\u\[\e[38;5;242m\])-(\[\e[38;5;94m\]\h\[\e[38;5;242m\])-(\[\e[38;5;82m\]\w\[\e[38;5;242m\])-(\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\e[30;1m\]\[\e[38;5;242m\])\n\[\e[38;5;242m\](\[\e[38;5;220m\]\t\[\e[38;5;242m\])\[\e[38;5;220m\] \$\[\e[0m\]"
     PS1="${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\[\e[38;5;242m\]\n(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[38;5;242m\])-(\[\e[38;5;254m\]\u\[\e[38;5;242m\])-(\[\e[38;5;94m\]\h\[\e[38;5;242m\])-(\[\e[38;5;82m\]\w\[\e[38;5;242m\])-\[\e[38;5;242m\]\[\e[38;5;242m\](\[\e[38;5;220m\]\t\[\e[38;5;242m\])\[\e[38;5;220m\]\n \$ \[\e[0m\]"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
+case "$TERM" in
+	rxvt-unicode-256color)
+	    PS1="\[\033[01;37m\]\[\e[38;5;242m\]\n(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\";fi)\[\e[38;5;242m\])-(\[\e[38;5;166m\]\u\[\e[38;5;242m\])-(\[\e[38;5;82m\]\w\[\e[38;5;242m\])-\[\e[38;5;242m\]\[\e[38;5;242m\](\[\e[38;5;166m\]\t\[\e[38;5;242m\])\[\e[38;5;166m\]\n \$ \[\e[0m\]"
+	;;
+esac
+# uncomment for a colored prompt, if the terminal has the capability; turned
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -88,20 +90,26 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Fuck i need this bitch3$
-alias gg='cd $HOME/GIT'
+#Fuck i need this bitch3$
+alias macc="sudo macchanger -m 90:21:81:66:6b:a5 eth0"
+alias search="grep -inr"
+alias lsd="ls -altr | grep ^d"
+alias cdi='cd /usr/include'
+alias cdg='cd $HOME/GIT'
 alias bb='cd ..'
-alias hh='cd $HOME'
-
+alias cdh='cd $HOME'
+alias cdk='cd /lib/modules/$(uname -r)'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+#'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -110,8 +118,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# enable programmable completion features (you dont need to enable
+# this, if its already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -123,5 +131,6 @@ fi
 
 
 #env vars
-export PATH=$PATH:/home/fate/builds/apache-maven-3.3.3/bin
 export JAVA_HOME=/usr/local/
+
+fortune | cowsay
