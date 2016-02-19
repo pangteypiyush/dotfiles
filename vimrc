@@ -73,16 +73,23 @@ let g:indent_guides_start_level=2
 
 "for tagbar.vim{{{
 let g:tagbar_usearrows = 1
-"let mapleader="\"
+"let mapleader=" "
 nnoremap <leader>l :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+"let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
-let g:tagbar_show_linenumber = 1
+let g:tagbar_show_linenumbers = 3
+autocmd FileType c,cpp,vim,java,html,php,js nested :TagbarOpen
+let g:tagbar_autopreview = 0 "moody
 "}}}
 
 "for explore{{{
 map <c-w>o :Vexplore ~<cr>
 map <c-w>p :Vexplore<cr>
+let g:netrw_banner=0
+let g:netrw_browse_split=2
+let g:netrw_hide=1
+let g:netrw_winsize=20
+"autocmd FileType c,cpp,vim,java,html,php,js :Vexplore 
 "}}}
 
 "for enhancedCommentify{{{
@@ -168,3 +175,4 @@ function! ClearRegisters()
 	endfor
 endfunction
 "}}}
+
