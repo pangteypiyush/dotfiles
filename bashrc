@@ -60,10 +60,10 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
+unset color_prompt 
 
 case "$TERM" in
-	rxvt-unicode-256color|screen)
+	rxvt-unicode-256color|screen*)
 	    PS1="\033[01;37m\]\[\e[38;5;242m\]\n(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\";fi)\[\e[38;5;242m\])-(\[\e[38;5;166m\]\u\[\e[38;5;242m\])-(\[\e[38;5;82m\]\w\[\e[38;5;242m\])-(\[\e[38;5;166m\]\t\[\e[38;5;242m\])
 \e[0m\]\[\e[38;5;166m\] $ \e[0m\]"
 	;;
@@ -132,9 +132,11 @@ fi
 
 
 #env vars
-export JAVA_HOME=/usr/local/
+export PATH=$PATH:/usr/local/jdk1.8.0_74/bin
+export JAVA_HOME=/usr/local/jdk1.8.0_74
 
-case $(shuf -e 0 1 -n 1) in
-	1)
-	fortune | cowsay -$(shuf -e b d g p s t y -n 1);;
-esac
+# effects startup time :(
+# case $(shuf -e 0 1 -n 1) in
+#         1)
+#         fortune | cowsay -$(shuf -e b d g p s t y -n 1);;
+# esac
