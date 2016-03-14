@@ -78,13 +78,14 @@ nnoremap <leader>l :TagbarToggle<CR>
 "let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_show_linenumbers = 3
-autocmd FileType c,cpp,vim,java,html,php,js nested :TagbarOpen
+"slow startup while openeing heavy file
+"autocmd FileType c,cpp,vim,java,php,js nested :TagbarOpen
 let g:tagbar_autopreview = 0 "moody
 "}}}
 
 "for explore{{{
-map <c-w>o :Vexplore ~<cr>
-map <c-w>p :Vexplore<cr>
+"map <c-w>o :Vexplore ~<cr>
+"map <c-w>p :Vexplore<cr>
 let g:netrw_banner=0
 let g:netrw_browse_split=2
 let g:netrw_hide=1
@@ -94,6 +95,10 @@ let g:netrw_winsize=20
 
 "for enhancedCommentify{{{
 let g:EnhCommentifyMultiPartBlocks = 'yes'
+let g:EnhCommentifyIgnoreWS = 'no'
+let g:EnhCommentifyPretty = 'yes'
+let g:EnhCommentifyUseSyntax = 'yes'
+let g:EnhCommentifyCommentsOp = 'yes'  "EXPERIMENTAL
 "}}}
 
 "for doxygen{{{
@@ -103,11 +108,13 @@ let g:DoxygenToolkit_authorName="Piyush Pangtey"
 
 "for buffer traversal{{{
 nnoremap <leader>o :bnext<cr>
+nnoremap <leader>[ :bd<cr>
 nnoremap <leader>p :bprev<cr>
 "}}}
 
 "for tabpage{{{
-nnoremap <leader>w :tabnew +Explore<cr>
+nnoremap <leader>w :tabnew <cr>
+"+Explore<cr>
 nnoremap <leader>e :tabn<cr>
 nnoremap <leader>q :tabp<cr>
 "}}}
@@ -175,4 +182,13 @@ function! ClearRegisters()
 	endfor
 endfunction
 "}}}
+
+"for NERDTree{{{
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowLineNumbers=1
+let NERDTreeMinimalUI=1
+nnoremap <leader>t :NERDTreeFind<CR>
+nnoremap <leader>g :NERDTreeToggle<CR>
+"}}}
+
 
