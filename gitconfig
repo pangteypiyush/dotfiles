@@ -1,0 +1,25 @@
+[core]
+	editor = vim
+[color]
+	ui = auto
+[push]
+	default = simple
+[log]
+	abbrevCommit = 1
+[alias]
+	lol = log --graph --decorate --pretty=oneline --all
+[diff]
+	tool = vimdiff
+[user]
+	email = 
+	name = 
+[alias]
+	lol = log --graph --decorate --pretty=oneline --all
+	logstat = log --stat --summary --all
+[sendemail]
+	from = 
+	smtpServer = 
+	smtpUser = 
+	smtpEncryption = tls
+	smtpServerPort = 587
+	chainreplyto = false
