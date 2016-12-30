@@ -7,7 +7,7 @@ set sts=8
 set smarttab
 set showmatch
 set splitbelow
-set splitright
+" HTML editing Shit
 "set matchpairs+=<:>
 set incsearch
 set hlsearch
@@ -23,7 +23,7 @@ set autoindent
 set t_Co=256
 set cursorline
 set completeopt-=preview
-set nocp
+"let mapleader=" "
 
 filetype indent on
 filetype plugin on
@@ -44,9 +44,9 @@ syntax enable
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-"}}}u
+"}}}
 
-"{{{ relative to absolute row number
+"{{{ relative <-> absolute row numbering
 set rnu
 function ToggleNumbersOn()	
 	set rnu!
@@ -73,7 +73,6 @@ let g:indent_guides_start_level=2
 
 "for tagbar.vim{{{
 let g:tagbar_usearrows = 1
-"let mapleader=" "
 nnoremap <leader>l :TagbarToggle<CR>
 "let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
@@ -87,7 +86,7 @@ let g:tagbar_autopreview = 0 "moody
 "map <c-w>o :Vexplore ~<cr>
 "map <c-w>p :Vexplore<cr>
 let g:netrw_banner=0
-let g:netrw_browse_split=2
+let g:netrw_browse_split=3 "earlier i used 2
 let g:netrw_hide=1
 let g:netrw_winsize=20
 "autocmd FileType c,cpp,vim,java,html,php,js :Vexplore 
@@ -192,3 +191,5 @@ nnoremap <leader>g :NERDTreeToggle<CR>
 "}}}
 
 
+autocmd FileType php,html,css set tabstop=4
+autocmd FileType php,html,css set shiftwidth=4
