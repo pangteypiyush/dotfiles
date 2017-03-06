@@ -1,6 +1,7 @@
 " custom core {{{ 
+set encoding=utf-8
 set nocompatible
-"set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 set tabstop=8
 set shiftwidth=8
 set sts=8
@@ -15,8 +16,9 @@ set noswapfile
 set nobackup
 set nowritebackup
 set autoread
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+" set colorcolumn=+1
+set colorcolumn=81
 set ignorecase
 set smartcase
 set autoindent
@@ -24,9 +26,11 @@ set t_Co=256
 set cursorline
 set completeopt-=preview
 "let mapleader=" "
+set hidden "allow buffer change even if changes were made
 
 filetype indent on
 filetype plugin on
+
 
 set omnifunc=syntaxcomplete#Complete
 
@@ -44,6 +48,21 @@ syntax enable
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+"}}}
+
+"{{{ Split controls
+"}}}
+
+"{{{ Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+call vundle#begin('~/.vim/bundle/plugins')
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+call vundle#end()
 "}}}
 
 "{{{ relative <-> absolute row numbering
@@ -106,9 +125,9 @@ let g:DoxygenToolkit_authorName="Piyush Pangtey"
 "}}}
 
 "for buffer traversal{{{
-nnoremap <leader>o :bnext<cr>
-nnoremap <leader>[ :bd<cr>
-nnoremap <leader>p :bprev<cr>
+nnoremap <leader>] :bnext<cr>
+nnoremap <leader>p :bd<cr>
+nnoremap <leader>[ :bprev<cr>
 "}}}
 
 "for tabpage{{{
@@ -188,8 +207,19 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI=1
 nnoremap <leader>t :NERDTreeFind<CR>
 nnoremap <leader>g :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 "}}}
 
+"{{{ For Web-Dev indents
+autocmd FileType php,html,css,js set tabstop=2
+autocmd FileType php,html,css,js set shiftwidth=2
+"}}}
 
-autocmd FileType php,html,css set tabstop=4
-autocmd FileType php,html,css set shiftwidth=4
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
