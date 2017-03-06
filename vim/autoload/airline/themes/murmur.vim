@@ -34,9 +34,9 @@ let s:gui_replacefg   = '#FFFFFF'
 let s:cterm_alert     = 88   " Modified file alert color
 let s:gui_alert       = '#870000'
 
-let s:cterm_inactivebg = 234 " Background for inactive mode
+let s:cterm_inactivebg = 240  " Background for inactive mode 234 def
 let s:gui_inactivebg   = '#1C1C1C'
-let s:cterm_inactivefg = 239 " Foreground for inactive mode
+let s:cterm_inactivefg = 234 " Foreground for inactive mode 239 def
 let s:gui_inactivefg   = '#4E4E4E'
 
 " Branch and file format

@@ -27,12 +27,10 @@ set cursorline
 set completeopt-=preview
 "let mapleader=" "
 set hidden "allow buffer change even if changes were made
-
 filetype indent on
 filetype plugin on
-
-
-set omnifunc=syntaxcomplete#Complete
+hi VertSplit guibg=NONE ctermfg=166
+set fillchars+=vert:│
 
 "fold
 set foldcolumn=2
@@ -42,15 +40,13 @@ set showcmd
 set ruler
 set mouse=a
 
+set omnifunc=syntaxcomplete#Complete
 syntax enable
 
 "for solarized theme
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
-"}}}
-
-"{{{ Split controls
 "}}}
 
 "{{{ Vundle
@@ -61,6 +57,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
+Plugin 'thinca/vim-ref'
+Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
 call vundle#end()
 "}}}
@@ -216,6 +214,7 @@ autocmd FileType php,html,css,js set tabstop=2
 autocmd FileType php,html,css,js set shiftwidth=2
 "}}}
 
+"{{{ Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -223,3 +222,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+"}}}
