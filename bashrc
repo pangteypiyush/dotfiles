@@ -8,6 +8,12 @@ function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
+function motd(){
+	if [ $(command -v fortune) ] && [ $(command -v cowsay) ]; then
+		fortune | cowsay -f $(ls /usr/share/cows/ | shuf -n1)
+	fi
+}
+
 # color_prompt=yes
 # if [ "$color_prompt" = yes ]; then
 #     PS1="${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\[\e[38;5;242m\]\n(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[38;5;242m\])-(\[\e[38;5;254m\]\u\[\e[38;5;242m\])-(\[\e[38;5;82m\]\w\[\e[38;5;242m\])\n\[\e[38;5;220m\]\$ \[\e[0m\]"
@@ -55,3 +61,5 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 export PATH=$PATH:~/.config/composer/vendor/bin/:/home/ppang/.local/share/VSCode-linux-x64/bin
+motd
+
