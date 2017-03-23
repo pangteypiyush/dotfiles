@@ -30,20 +30,11 @@ PS1="\n\[\e[38;5;250m\]\[\e[48;5;240m\] \u \[\e[48;5;31m\]\[\e[38;5;240m\]\[\
 #         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 # fi
 
-if [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
+
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
 fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-#Fuck i need this bitch3$
+#### goes to .bash_aliases file
 alias macc="sudo ip link set enp2s0 address 28:e3:47:e3:7b:d5"
 alias search="grep -inr"
 alias lsd="ls -altr | grep ^d"
@@ -53,13 +44,19 @@ alias bb='cd ..'
 alias cdh='cd $HOME'
 alias cdk='cd /lib/modules/$(uname -r)'
 alias antispoof='sudo arp -s 10.0.0.1 24:b6:fd:b2:1f:ea'
-
-
 alias serve='php -S 127.0.0.1:8000 -t .'
-
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 fi
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+####
+
 export PATH=$PATH:~/.config/composer/vendor/bin/:/home/ppang/.local/share/VSCode-linux-x64/bin
 motd
 
