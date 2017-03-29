@@ -1,7 +1,7 @@
 " custom core {{{ 
 set encoding=utf-8
 set nocompatible
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamedplus
 set tabstop=8
 set shiftwidth=8
 set sts=8
@@ -47,6 +47,12 @@ syntax enable
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+"for clipboard //gvim stuff (ABS arch)
+" vmap <C-c> "+yi
+" vmap <C-x> "+c
+" vmap <C-v> c<ESC>"+p
+" imap <C-v> <C-r><C-o>+
 "}}}
 
 "{{{ Vundle
