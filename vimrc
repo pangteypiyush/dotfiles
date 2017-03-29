@@ -36,6 +36,7 @@ set fillchars+=vert:│
 set foldcolumn=2
 set foldmethod=marker
 
+set pastetoggle=<F2>
 set showcmd
 set ruler
 set mouse=a
@@ -216,8 +217,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "}}}
 
 "{{{ For Web-Dev indents
-autocmd FileType php,html,css,js set tabstop=2
-autocmd FileType php,html,css,js set shiftwidth=2
+autocmd FileType php,html,css,javascript set tabstop=2
+autocmd FileType php,html,css,javascript set shiftwidth=2
 "}}}
 
 "{{{ Syntastic
