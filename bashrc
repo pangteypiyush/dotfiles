@@ -14,6 +14,20 @@ function motd(){
 	fi
 }
 
+function gitpulls(){
+	clear
+	echo "batch pull : $PWD"
+	echo "------------"
+	echo ""
+	for dir in $(find . -name ".git")
+	do cd ${dir%/*}
+		echo $PWD
+		git pull
+		echo ""
+		cd - > /dev/null
+	done
+}
+
 # color_prompt=yes
 # if [ "$color_prompt" = yes ]; then
 #     PS1="${debian_chroot:+($debian_chroot)}\[\033[01;37m\]\[\e[38;5;242m\]\n(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\e[38;5;242m\])-(\[\e[38;5;254m\]\u\[\e[38;5;242m\])-(\[\e[38;5;82m\]\w\[\e[38;5;242m\])\n\[\e[38;5;220m\]\$ \[\e[0m\]"
