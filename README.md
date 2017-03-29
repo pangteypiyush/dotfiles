@@ -9,3 +9,4 @@
 > - tmux
 > - vim ( config + VIMHOME )
 > - git ( config + batch-pull script )
+> - redshift
