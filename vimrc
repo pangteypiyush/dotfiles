@@ -138,8 +138,8 @@ nnoremap <leader>[ :bprev<cr>
 "for tabpage{{{
 nnoremap <leader>w :tabnew <cr>
 "+Explore<cr>
-nnoremap <leader>e :tabn<cr>
-nnoremap <leader>q :tabp<cr>
+nnoremap <leader>' :tabn<cr>
+nnoremap <leader>; :tabp<cr>
 "}}}
 
 "tags to be loaded for java{{{
@@ -217,16 +217,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "}}}
 
 "{{{ For Web-Dev indents
-autocmd FileType php,html,css,javascript set tabstop=2
-autocmd FileType php,html,css,javascript set shiftwidth=2
+autocmd FileType php,html,css,javascript,xml set tabstop=2
+autocmd FileType php,html,css,javascript,xml set shiftwidth=2
 "}}}
 
 "{{{ Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"}}}
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+nnoremap <leader>D :Errors<cr>
+" }}}
