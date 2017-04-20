@@ -72,7 +72,7 @@ ${font StyleBats:size=16}❯${font} RAM: $memperc% ${alignr}${membar 8,60}
 ${font StyleBats:size=16}❯${font} Uptime: ${alignr}${uptime}
 
 DATE ${hr 2}
-${alignc 19}${font Arial Black:size=18}${time %H:%M}${font}
+${alignc 19}${font Arial Black:size=18}${time %l:%M %p}${font}
 ${voffset 2}${alignc}${time %A, %d %B %Y}
 
 NETWORK ${hr 2}
