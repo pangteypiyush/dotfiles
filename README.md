@@ -11,3 +11,4 @@
 > - git ( config + batch-pull script )
 > - redshift
 > - hexchat
+> - conky
