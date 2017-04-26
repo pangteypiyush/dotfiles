@@ -3,6 +3,9 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s histappend
+# bind 'set show-mode-in-prompt on'
+set -o vi
+# shopt -s dotglob nullglob #( include hidden files in globs, but []regex fails)
 
 function parse_git_branch {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
@@ -59,5 +62,5 @@ if [ -f ~/.bash_exports ]; then
 	. ~/.bash_exports
 fi
 
-motd
+# motd
 
