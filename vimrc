@@ -49,6 +49,10 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
+"for clearing last search string
+" command C let @/=""
+nnoremap <leader>cl :let @/=""<cr>
+
 "for clipboard //gvim stuff (ABS arch)
 " vmap <C-c> "+yi
 " vmap <C-x> "+c
@@ -67,6 +71,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'thinca/vim-ref'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
+Plugin 'qpkorr/vim-bufkill'
 call vundle#end()
 "}}}
 
