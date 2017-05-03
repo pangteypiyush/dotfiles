@@ -12,3 +12,4 @@
 > - redshift
 > - hexchat
 > - conky
+> - inputrc
