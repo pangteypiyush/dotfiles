@@ -16,10 +16,5 @@
 [alias]
 	lol = log --graph --decorate --pretty=oneline --all
 	logstat = log --stat --summary --all
-[sendemail]
-	from = 
-	smtpServer = 
-	smtpUser = 
-	smtpEncryption = tls
-	smtpServerPort = 587
-	chainreplyto = false
+[merge]
+	conflictstyle = diff3
