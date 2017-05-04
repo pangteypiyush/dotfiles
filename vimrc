@@ -77,12 +77,11 @@ call vundle#end()
 
 "{{{ relative <-> absolute row numbering
 set rnu
+set nu " always show cursor's line no. (!0)
 function ToggleNumbersOn()	
 	set rnu!
-	set nu
 endfunction
 function ToggleRelativeOn()
-	set nu!
 	set rnu
 endfunction
 autocmd FocusLost * call ToggleNumbersOn()
