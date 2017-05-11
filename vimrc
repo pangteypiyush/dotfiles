@@ -1,4 +1,5 @@
 " custom core {{{ 
+" set your terminal to have atleast 89 columns.
 set encoding=utf-8
 set nocompatible
 set clipboard=unnamedplus
