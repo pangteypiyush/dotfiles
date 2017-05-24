@@ -1,5 +1,9 @@
+# paths
 export JAVA_HOME=$HOME/.local/share/java/jdk1.8.0_121
 export SCALA_HOME=$HOME/.local/share/scala/scala-2.12.1
 export GOROOT=$HOME/.local/share/go1.7.5
 
 export PATH=$PATH:~/.local/bin:$GOROOT/bin:$JAVA_HOME/bin:$SCALA_HOME/bin
+
+# env
+export _JAVA_AWT_WM_NONREPARENTING=1
