@@ -73,6 +73,7 @@ Plugin 'thinca/vim-ref'
 Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 "}}}
 
@@ -212,7 +213,7 @@ endfunction
 "}}}
 
 "for NERDTree{{{
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI=1
 nnoremap <leader>t :NERDTreeFind<CR>
