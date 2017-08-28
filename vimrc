@@ -1,4 +1,4 @@
-" custom core {{{ 
+" Custom Core {{{ 
 " set your terminal to have atleast 89 columns.
 set encoding=utf-8
 set nocompatible
@@ -77,7 +77,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 "}}}
 
-"{{{ relative <-> absolute row numbering
+"{{{ Relative <-> Absolute row numbering
 set rnu
 set nu " always show cursor's line no. (!0)
 function ToggleNumbersOn()	
@@ -92,7 +92,7 @@ autocmd InsertEnter * call ToggleNumbersOn()
 autocmd InsertLeave * call ToggleRelativeOn()
 "}}}
 
-"for indent_guide.vim{{{
+"IndentGuide{{{
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=235
@@ -101,7 +101,7 @@ nnoremap <leader>k :IndentGuidesToggle<cr>
 let g:indent_guides_start_level=2
 "}}}
 
-"for tagbar.vim{{{
+"Tagbar{{{
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
 "let g:tagbar_autofocus = 1
@@ -112,7 +112,7 @@ let g:tagbar_show_linenumbers = 3
 let g:tagbar_autopreview = 0 "moody
 "}}}
 
-"for explore{{{
+"Explore{{{
 "map <c-w>o :Vexplore ~<cr>
 "map <c-w>p :Vexplore<cr>
 let g:netrw_banner=0
@@ -122,7 +122,7 @@ let g:netrw_winsize=20
 "autocmd FileType c,cpp,vim,java,html,php,js :Vexplore 
 "}}}
 
-"for enhancedCommentify{{{
+"EnhancedCommentify{{{
 let g:EnhCommentifyMultiPartBlocks = 'yes'
 let g:EnhCommentifyIgnoreWS = 'no'
 let g:EnhCommentifyPretty = 'yes'
@@ -130,33 +130,30 @@ let g:EnhCommentifyUseSyntax = 'yes'
 let g:EnhCommentifyCommentsOp = 'yes'  "EXPERIMENTAL
 "}}}
 
-"for doxygen{{{
+"DoxygenToolkit{{{
 let g:DoxygenToolkit_authorName="Piyush Pangtey"
 "let g:DoxygenToolkit_briefTag_pre="@Synopsis"
 "}}}
 
-"for buffer traversal{{{
+"Buffer Navigation{{{
 nnoremap <leader>] :bnext<cr>
 nnoremap <leader>p :bd<cr>
 nnoremap <leader>[ :bprev<cr>
 "}}}
 
-"for tabpage{{{
+"Tabpage{{{
 nnoremap <leader>w :tabnew <cr>
 "+Explore<cr>
 nnoremap <leader>' :tabn<cr>
 nnoremap <leader>; :tabp<cr>
 "}}}
 
-"tags to be loaded for java{{{
-autocmd FileType java set tags=/home/fate/.vim/tags/java.tags
+"Tags{{{
+" autocmd FileType java set tags=~/.vim/tags/java.tags
+" autocmd FileType c set tags=~/.vim/tags/c.tags
 "}}}
 
-"tags for c {{{
-"autocmd FileType c set tags=/home/fate/.vim/tags/c.tags
-"}}}
-
-"for airline{{{
+"Airline{{{
 set encoding=utf-8
 set laststatus=2
 let g:airline_theme='murmur'
@@ -183,7 +180,7 @@ let g:airline#extensions#tabline#left_alt_sep ="\ue0b1"
 "let g:airline_symbols.paste = '∥'
 "}}}
 
-"for gitgutter"{{{
+"GitGutter"{{{
 let g:gitgutter_enabled=1
 let g:gitgutter_signs=1
 let g:gitgutter_sign_column_always=1
@@ -197,7 +194,7 @@ nmap <leader>hn <Plug>GitGutterNextHunk
 nmap <leader>hp <Plug>GitGutterPrevHunk
 "}}}
 
-"for clearing Registers"{{{
+"Clear Registers"{{{
 function! ClearRegisters()
 	redir => l:register_out
 	silent register
@@ -212,7 +209,7 @@ function! ClearRegisters()
 endfunction
 "}}}
 
-"for NERDTree{{{
+"NERDTree{{{
 let NERDTreeQuitOnOpen=0
 let NERDTreeShowLineNumbers=1
 let NERDTreeMinimalUI=1
@@ -222,7 +219,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "}}}
 
-"{{{ For Web-Dev indents
+"{{{ Indents
 autocmd FileType php,html,css,javascript,xml set tabstop=2
 autocmd FileType php,html,css,javascript,xml set shiftwidth=2
 "}}}
@@ -237,3 +234,10 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 nnoremap <leader>D :Errors<cr>
 " }}}
+
+"{{{ Make this a habbit.
+map <Left>  :echoe "h"<CR>
+map <Right> :echoe "l"<CR>
+map <Up>    :echoe "k"<CR>
+map <Down>  :echoe "j"<CR>
+"}}}
