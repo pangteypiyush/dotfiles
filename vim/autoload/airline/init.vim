@@ -61,6 +61,7 @@ function! airline#init#bootstrap()
         \ 'whitespace': get(g:, 'airline_powerline_fonts', 0) ? "\u2739" : '!',
         \ 'linenr': get(g:, 'airline_linecolumn_prefix', get(g:, 'airline_powerline_fonts', 0) ? "\ue0a1" : ':' ),
         \ 'branch': get(g:, 'airline_branch_prefix', get(g:, 'airline_powerline_fonts', 0) ? "\ue0a0" : ''),
+        \ 'maxlinenr': "\u2630 ",
         \ 'modified': '+',
         \ 'space': ' ',
         \ 'crypt': get(g:, 'airline_crypt_symbol', nr2char(0x1F512)),
@@ -80,6 +81,7 @@ function! airline#init#bootstrap()
         \ })
   call airline#parts#define_raw('file', '%f%m')
   call airline#parts#define_raw('linenr', '%{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#')
+  call airline#parts#define('maxlinenr', { 'raw': '/%L%{g:airline_symbols.maxlinenr}', 'accent': 'bold'})
   call airline#parts#define_function('ffenc', 'airline#parts#ffenc')
   call airline#parts#define_empty(['hunks', 'branch', 'tagbar', 'syntastic', 'eclim', 'whitespace','windowswap'])
   call airline#parts#define_text('capslock', '')
@@ -109,7 +111,7 @@ function! airline#init#sections()
     let g:airline_section_y = airline#section#create_right(['BN: %{bufnr("%")} '.arrow.spc,'ffenc'])
   endif
   if !exists('g:airline_section_z')
-    let g:airline_section_z = airline#section#create(['windowswap', '%3p%%'.spc, 'linenr', ':%3v '])
+    let g:airline_section_z = airline#section#create(['windowswap', '%3p%%'.spc, 'linenr', 'maxlinenr', ':%3v '])
   endif
   if !exists('g:airline_section_warning')
     let g:airline_section_warning = airline#section#create(['syntastic', 'eclim', 'whitespace'])
