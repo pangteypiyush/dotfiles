@@ -2,7 +2,7 @@
 " set your terminal to have atleast 89 columns.
 set encoding=utf-8
 set nocompatible
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 set tabstop=8
 set shiftwidth=8
 set sts=8
@@ -65,15 +65,23 @@ nnoremap <leader>cl :let @/=""<cr>
 set rtp+=~/.vim/bundle/Vundle.vim
 " call vundle#begin()
 call vundle#begin('~/.vim/bundle/plugins')
-Plugin 'gmarik/Vundle.vim'
+" Install this to ~/bundle/  'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'itchyny/calendar.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'thinca/vim-ref'
+Plugin 'hrj/vim-DrawIt'
+Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'goerz/ipynb_notedown.vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'bling/vim-bufferline'
 call vundle#end()
 "}}}
 
@@ -137,7 +145,7 @@ let g:DoxygenToolkit_authorName="Piyush Pangtey"
 
 "Buffer Navigation{{{
 nnoremap <leader>] :bnext<cr>
-nnoremap <leader>p :bd<cr>
+nnoremap <leader>p :BD<cr>
 nnoremap <leader>[ :bprev<cr>
 "}}}
 
@@ -191,7 +199,7 @@ nmap <leader>hs <Plug>GitGutterStageHunk
 nmap <leader>hr <Plug>GitGutterRevertHunk
 nmap <leader>hv <Plug>GitGutterPreviewHunk
 nmap <leader>hn <Plug>GitGutterNextHunk
-nmap <leader>hp <Plug>GitGutterPrevHunk
+nmap <leader>hN <Plug>GitGutterPrevHunk
 "}}}
 
 "Clear Registers"{{{
