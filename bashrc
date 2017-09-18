@@ -8,7 +8,7 @@ set -o vi
 # shopt -s dotglob nullglob #( include hidden files in globs, but []regex fails)
 
 function parse_git_branch {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
 }
 
 function motd(){
@@ -30,8 +30,8 @@ function gitpulls(){
 		cd - > /dev/null
 	done
 }
-
-PS1="\n\[\e[38;5;250m\]\[\e[48;5;240m\] \u \[\e[48;5;235m\]\[\e[38;5;240m\]\[\e[38;5;15m\]\[\e[48;5;235m\] \w \[\e[0m\]\[\e[38;5;235m\]\n\[\e[38;5;220m\]\[\e[48;5;236m\]\$(if [[ \$? == 0 ]]; then echo \" \$ \"; else echo \" x_x \"; fi)\$(parse_git_branch)\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\] " 
+ACCENT_COLOR="236m"
+PS1="\n\[\e[38;5;250m\]\[\e[48;5;240m\] \u@\h \[\e[48;5;$ACCENT_COLOR\]\[\e[38;5;240m\]\[\e[38;5;15m\]\[\e[48;5;$ACCENT_COLOR\] \w \[\e[0m\]\[\e[38;5;$ACCENT_COLOR\]\n\[\e[38;5;220m\]\[\e[48;5;236m\]\$(if [[ \$? == 0 ]]; then echo \" \$ \"; else echo \" x_x \"; fi)\$(parse_git_branch)\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\] "
 
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
