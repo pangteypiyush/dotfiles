@@ -62,10 +62,10 @@ nnoremap <leader>cl :let @/=""<cr>
 "}}}
 
 "{{{ Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/plugins/Vundle.vim
 " call vundle#begin()
 call vundle#begin('~/.vim/bundle/plugins')
-" Install this to ~/bundle/  'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'itchyny/calendar.vim'
