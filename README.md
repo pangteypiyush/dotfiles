@@ -13,3 +13,8 @@
 > - hexchat
 > - conky
 > - inputrc
+
+```bash
+# Clone this repo by:
+git clone --recursive https://github.com/pangteypiyush/dotfiles.git
+```
