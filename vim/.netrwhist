@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/mnt/magento/app/code/NewgenPayments/NextPay/view/frontend'
-let g:netrw_dirhist_2='/mnt/magento/app/code/NewgenPayments/NextPay/view/frontend/web'
-let g:netrw_dirhist_3='/mnt/magento/app/code/NewgenPayments/NextPay/view/frontend/web/js'
-let g:netrw_dirhist_4='/mnt/magento/app/code/NewgenPayments/NextPay/view/frontend/web/js/view'
-let g:netrw_dirhist_5='/mnt/magento/app/code/NewgenPayments/NextPay/view/frontend/web/js/view/payment'
-let g:netrw_dirhist_6='/mnt/magento/app/code/NewgenPayments/NextPay/view/frontend/web/js/view/payment/method-renderer'
-let g:netrw_dirhist_7='/home/ppang/core-storage/app/Http/Controllers'
