@@ -1,2 +1,5 @@
 vim/bundle/plugins/*
 !vim/bundle/plugins/Vundle.vim
+vim/.VimballRecord
+vim/.netrwhist
+vim/.swp
