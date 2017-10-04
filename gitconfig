@@ -23,3 +23,5 @@
  	hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
 [merge]
 	conflictstyle = diff3
+[pager]
+	show = vim -c '%sm/\\e.\\{-}m//g' -c 'set ft=diff' +1 -
