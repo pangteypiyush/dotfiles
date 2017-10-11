@@ -82,6 +82,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'goerz/ipynb_notedown.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'bling/vim-bufferline'
+Plugin 'vim-scripts/git_patch_tags.vim'
 call vundle#end()
 "}}}
 
