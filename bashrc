@@ -37,8 +37,12 @@ function check_if_ssh_tty(){
 	return $OLD_STATUS
 }
 
+function print_last_status(){
+	if [[ \$? == 0 ]]; then echo \" \$ \"; else echo \" x_x \"; fi
+}
+
 ACCENT_COLOR="236m"
-PS1="\n\[\e[38;5;250m\]\[\e[48;5;240m\]\$(check_if_ssh_tty) \u@\h \[\e[48;5;$ACCENT_COLOR\]\[\e[38;5;240m\]\[\e[38;5;15m\]\[\e[48;5;$ACCENT_COLOR\] \w \[\e[0m\]\[\e[38;5;$ACCENT_COLOR\]\n\[\e[38;5;220m\]\[\e[48;5;236m\]\$(if [[ \$? == 0 ]]; then echo \" \$ \"; else echo \" x_x \"; fi)\$(parse_git_branch)\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\] "
+PS1="\n\[\e[38;5;250m\]\[\e[48;5;240m\]\$(check_if_ssh_tty) \u@\h \[\e[48;5;$ACCENT_COLOR\]\[\e[38;5;240m\]\[\e[38;5;15m\]\[\e[48;5;$ACCENT_COLOR\] \w \[\e[0m\]\[\e[38;5;$ACCENT_COLOR\]\n\[\e[38;5;220m\]\[\e[48;5;236m\]\$(print_last_status)\$(parse_git_branch)\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\] "
 
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
