@@ -38,7 +38,7 @@ function check_if_ssh_tty(){
 }
 
 function print_last_status(){
-	if [[ \$? == 0 ]]; then echo \" \$ \"; else echo \" x_x \"; fi
+	if [[ $? == 0 ]]; then echo " \$ "; else echo " x_x "; fi
 }
 
 ACCENT_COLOR="236m"
