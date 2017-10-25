@@ -33,7 +33,7 @@ function gitpulls(){
 
 function check_if_ssh_tty(){
 	OLD_STATUS=$?
-	if [ $(who -m |grep -o "([0-9.]*)$") ] ; then echo '[SSH]'; fi
+	[[ ! -z "$SSH_TTY" ]] && echo '[SSH]'
 	return $OLD_STATUS
 }
 
