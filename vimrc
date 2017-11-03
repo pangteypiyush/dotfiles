@@ -85,6 +85,12 @@ Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/fzf'
 Plugin 'mattn/gist-vim'
 Plugin 'vim-scripts/git_patch_tags.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'mattn/webapi-vim'
+Plugin 'vim-scripts/cecutil'
+Plugin 'tmhedberg/matchit'
+Plugin 'severin-lemaignan/vim-minimap'
 call vundle#end()
 "}}}
 
