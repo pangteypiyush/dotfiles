@@ -82,6 +82,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'goerz/ipynb_notedown.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'bling/vim-bufferline'
+Plugin 'junegunn/fzf'
+Plugin 'mattn/gist-vim'
 Plugin 'vim-scripts/git_patch_tags.vim'
 call vundle#end()
 "}}}
@@ -142,6 +144,7 @@ let g:EnhCommentifyCommentsOp = 'yes'  "EXPERIMENTAL
 "DoxygenToolkit{{{
 let g:DoxygenToolkit_authorName="Piyush Pangtey"
 "let g:DoxygenToolkit_briefTag_pre="@Synopsis"
+nnoremap <F5> "=strftime("%c")<CR>P
 "}}}
 
 "Buffer Navigation{{{
