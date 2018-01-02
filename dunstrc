@@ -1,0 +1,129 @@
+[global]
+font = Quicksand 11
+
+allow_markup = yes
+plain_text = no
+
+format = "<b>%s</b>\n%b"
+
+# Sort messages by urgency.
+sort = no
+
+# Show how many messages are currently hidden (because of geometry).
+indicate_hidden = yes
+
+# Alignment of message text.
+# Possible values are "left", "center" and "right".
+alignment = center
+
+# The frequency with wich text that is longer than the notification
+# window allows bounces back and forth.
+# This option conflicts with "word_wrap".
+# Set to 0 to disable.
+bounce_freq = 0
+
+# Show age of message if message is older than show_age_threshold
+# seconds.
+# Set to -1 to disable.
+show_age_threshold = -1
+
+# Split notifications into multiple lines if they don't fit into
+# geometry.
+word_wrap = yes
+
+# Ignore newlines '\n' in notifications.
+ignore_newline = no
+
+# Hide duplicate's count and stack them
+stack_duplicates = yes
+hide_duplicates_count = yes
+
+geometry = "300x50-15+30"
+
+# Shrink window if it's smaller than the width.  Will be ignored if
+# width is 0.
+shrink = no
+
+# Don't remove messages, if the user is idle (no mouse or keyboard input)
+# for longer than idle_threshold seconds.
+# Set to 0 to disable.
+idle_threshold = 0
+
+# Which monitor should the notifications be displayed on.
+monitor = 0
+
+follow = none
+
+# Should a notification popped up from history be sticky or timeout
+# as if it would normally do.
+sticky_history = yes
+
+# Maximum amount of notifications kept in history
+history_length = 15
+
+# Display indicators for URLs (U) and actions (A).
+show_indicators = no
+
+# The height of a single line.  If the height is smaller than the
+# font height, it will get raised to the font height.
+# This adds empty space above and under the text.
+line_height = 3
+
+# Draw a line of "separatpr_height" pixel height between two
+# notifications.
+# Set to 0 to disable.
+separator_height = 2
+
+# Padding between text and separator.
+padding = 6
+
+# Horizontal padding.
+horizontal_padding = 6
+
+separator_color = frame
+
+startup_notification = false
+
+# dmenu path.
+dmenu = /usr/bin/dmenu -p dunst:
+
+# Browser for opening urls in context menu.
+browser = /usr/bin/firefox -new-tab
+
+# Align icons left/right/off
+icon_position = off
+max_icon_size = 80
+
+# Paths to default icons.
+icon_folders = /home/ppang/.local/share/icons/Oranchelo/status:/home/ppang/.local/share/icons/Oranchelo/places:/home/ppang/.local/share/icons/Oranchelo/panel:/home/ppang/.local/share/icons/Oranchelo/mimetypes:/home/ppang/.local/share/icons/Oranchelo/emotes:/home/ppang/.local/share/icons/Oranchelo/emblems:/home/ppang/.local/share/icons/Oranchelo/devices:/home/ppang/.local/share/icons/Oranchelo/categories:/home/ppang/.local/share/icons/Oranchelo/apps:/home/ppang/.local/share/icons/Oranchelo/actions
+
+[frame]
+width = 3
+color = "#8EC07C"
+
+[shortcuts]
+# Close notification.
+close = ctrl+space
+
+# Close all notifications.
+close_all = ctrl+shift+space
+
+[urgency_low]
+frame_color = "#ffffff"
+foreground = "#ffffff"
+background = "#262626"
+timeout = 4
+
+[urgency_normal]
+frame_color = "#149fda"
+foreground = "#ffffff"
+background = "#262626"
+timeout = 6
+
+[urgency_critical]
+frame_color = "#FFCC00"
+foreground = "#ffffff"
+background = "#262626"
+timeout = 8
+
+# vim: ft=cfg
