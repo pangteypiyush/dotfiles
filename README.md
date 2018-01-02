@@ -13,6 +13,7 @@
 > - hexchat
 > - conky
 > - inputrc
+> - dunstrc 
 
 ```bash
 # Clone this repo by:
