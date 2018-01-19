@@ -263,3 +263,11 @@ map <Right> :echoe "l"<CR>
 map <Up>    :echoe "k"<CR>
 map <Down>  :echoe "j"<CR>
 "}}}
+
+"{{{ function for xclip and key bindings
+function CustomXClipCall() range
+  echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).' | xclip -sel clip')
+endfunction
+com -range=% -nargs=0 CustomXClipCall :<line1>,<line2>call CustomXClipCall()
+vnoremap <leader>qp :CustomXClipCall<cr>
+"}}}
