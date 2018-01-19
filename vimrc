@@ -50,6 +50,9 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
+"fix for lxterminal(nvim)
+set guicursor=
+
 "for clearing last search string
 " command C let @/=""
 nnoremap <leader>cl :let @/=""<cr>
