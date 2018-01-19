@@ -94,6 +94,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'vim-scripts/cecutil'
 Plugin 'tmhedberg/matchit'
 Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'aserebryakov/vim-todo-lists'
 call vundle#end()
 "}}}
 
