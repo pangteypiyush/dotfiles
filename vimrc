@@ -264,6 +264,11 @@ map <Up>    :echoe "k"<CR>
 map <Down>  :echoe "j"<CR>
 "}}}
 
+"{{{ Calendar
+let g:calendar_date_endian="little"
+let g:calendar_first_day="monday"
+"}}}
+
 "{{{ function for xclip and key bindings
 function CustomXClipCall() range
   echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).' | xclip -sel clip')
