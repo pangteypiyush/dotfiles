@@ -26,7 +26,7 @@ settings_table = {
 		fg_alpha=0.8,
 		x=cpu_x, y=cpu_y,
 		radius=70,
-		thickness=10,
+		thickness=9,
 		start_angle=140,
 		end_angle=450
 	},
@@ -71,21 +71,6 @@ settings_table = {
 		thickness=9,
 		start_angle=140,
 		end_angle=450
-	}
-	,
-	{
-		name='exec',
-		arg=" nvidia-settings -t -q [gpu:0]/GPUUtilization | awk -F, '{print $1}'|awk -F= '{print $2}'",
-		max=100,
-		bg_colour=0xffffff,
-		bg_alpha=0.1,
-		fg_colour=gpu,
-		fg_alpha=0.6,
-		x=320, y=405,
-		radius=40,
-		thickness=20,
-		start_angle=-90,
-		end_angle=180
 	}
 }
 
@@ -189,10 +174,10 @@ function conky_rings()
 		setup_rings(cr,settings_table[i])
 	end
 	--draw cpu temp bars
-	DrawBars(cr,false,temp_x                        ,temp_y,temp_width,120,0,rgb_to_r_g_b(0xffffff))
-	DrawBars(cr,false,temp_x+1*(temp_sep+temp_width),temp_y,temp_width,120,1,rgb_to_r_g_b(0xffffff))
-	DrawBars(cr,false,temp_x+2*(temp_sep+temp_width),temp_y,temp_width,120,2,rgb_to_r_g_b(0xffffff))
-	DrawBars(cr,false,temp_x+3*(temp_sep+temp_width),temp_y,temp_width,120,3,rgb_to_r_g_b(0xffffff))
+--         DrawBars(cr,false,temp_x                        ,temp_y,temp_width,120,0,rgb_to_r_g_b(0xffffff))
+--         DrawBars(cr,false,temp_x+1*(temp_sep+temp_width),temp_y,temp_width,120,1,rgb_to_r_g_b(0xffffff))
+--         DrawBars(cr,false,temp_x+2*(temp_sep+temp_width),temp_y,temp_width,120,2,rgb_to_r_g_b(0xffffff))
+--         DrawBars(cr,false,temp_x+3*(temp_sep+temp_width),temp_y,temp_width,120,3,rgb_to_r_g_b(0xffffff))
 	-- gpu tem[]
 	--DrawBars(cr,true,390,390,temp_width,120,0,rgb_to_r_g_b(0xffffff))
 end
