@@ -255,6 +255,7 @@ set statusline+=%*
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 nnoremap <leader>D :Errors<cr>
+set shell=/usr/bin/bash
 " }}}
 
 "{{{ Make this a habbit.
