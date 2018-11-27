@@ -1,0 +1,12 @@
+rofi.lines:                          10
+rofi.width:                          59
+rofi.location:	                     2
+rofi.columns:	                     2
+rofi.show-icons:                     true
+rofi.theme:		                     glue_pro_blue
+rofi.modi:		                     combi,window,ssh,run,drun
+rofi.matching:                       fuzzy
+rofi.ssh-command:                    {terminal} -- {ssh-client} {host}
+
+rofi.run-shell-command:              {terminal} -- {cmd}
+rofi.fake-transparency:              true
