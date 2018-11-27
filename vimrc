@@ -3,9 +3,9 @@
 set encoding=utf-8
 set nocompatible
 "set clipboard=unnamedplus
-set tabstop=8
-set shiftwidth=8
-set sts=8
+set tabstop=4
+set shiftwidth=4
+set sts=4
 set smarttab
 set showmatch
 set splitbelow
@@ -71,18 +71,13 @@ call vundle#begin('~/.vim/bundle/plugins')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'itchyny/calendar.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'thinca/vim-ref'
-Plugin 'hrj/vim-DrawIt'
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'goerz/ipynb_notedown.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'bling/vim-bufferline'
 Plugin 'junegunn/fzf'
@@ -90,11 +85,10 @@ Plugin 'mattn/gist-vim'
 Plugin 'vim-scripts/git_patch_tags.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'mattn/webapi-vim'
 Plugin 'vim-scripts/cecutil'
 Plugin 'tmhedberg/matchit'
-Plugin 'severin-lemaignan/vim-minimap'
-Plugin 'aserebryakov/vim-todo-lists'
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
 call vundle#end()
 "}}}
 
@@ -242,8 +236,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "}}}
 
 "{{{ Indents
-autocmd FileType php,html,css,javascript,xml set tabstop=2
-autocmd FileType php,html,css,javascript,xml set shiftwidth=2
+autocmd BufNewFile,BufRead *.less set filetype=less
+autocmd FileType html,css,javascript,xml,less set tabstop=2
+autocmd FileType html,css,javascript,xml,less set shiftwidth=2
+autocmd FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
 
 "{{{ Syntastic
@@ -253,7 +249,7 @@ set statusline+=%*
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 nnoremap <leader>D :Errors<cr>
 set shell=/usr/bin/bash
 " }}}
@@ -263,11 +259,6 @@ map <Left>  :echoe "h"<CR>
 map <Right> :echoe "l"<CR>
 map <Up>    :echoe "k"<CR>
 map <Down>  :echoe "j"<CR>
-"}}}
-
-"{{{ Calendar
-let g:calendar_date_endian="little"
-let g:calendar_first_day="monday"
 "}}}
 
 "{{{ function for xclip and key bindings
