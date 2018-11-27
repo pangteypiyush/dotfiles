@@ -268,3 +268,8 @@ endfunction
 com -range=% -nargs=0 CustomXClipCall :<line1>,<line2>call CustomXClipCall()
 vnoremap <leader>qp :CustomXClipCall<cr>
 "}}}
+
+"{{{ Documentation PDV
+let g:pdv_template_dir = $HOME ."/.vim/bundle/plugins/pdv/templates/"
+nnoremap <buffer> <leader>dx :call pdv#DocumentCurrentLine()<CR>
+"}}}
