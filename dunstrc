@@ -112,18 +112,18 @@ close_all = ctrl+shift+space
 frame_color = "#ffffff"
 foreground = "#ffffff"
 background = "#262626"
-timeout = 4
+timeout = 10
 
 [urgency_normal]
 frame_color = "#149fda"
 foreground = "#ffffff"
 background = "#262626"
-timeout = 6
+timeout = 20
 
 [urgency_critical]
 frame_color = "#FFCC00"
 foreground = "#ffffff"
 background = "#262626"
-timeout = 8
+timeout = 30
 
 # vim: ft=cfg
