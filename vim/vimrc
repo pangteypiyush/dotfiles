@@ -1,0 +1,269 @@
+"{{{ Core
+set encoding=utf-8
+set laststatus=2
+set nocompatible
+"set clipboard=unnamedplus
+
+set colorcolumn=81
+set t_Co=256
+
+set tabstop=4
+set shiftwidth=4
+set sts=4
+set smarttab
+set autoindent
+
+set showmatch
+set splitbelow
+set showcmd
+set ruler
+set cursorline
+
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+
+set noswapfile
+set nobackup
+set nowritebackup
+set autoread
+"allow buffer change even if changes were made
+set hidden
+
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+filetype indent on
+filetype plugin on
+syntax enable
+
+set foldcolumn=0
+"set foldlevelstart=1
+set foldmethod=syntax
+set nofoldenable
+au Syntax * normal zR
+
+set mouse=a
+
+"Toggle <PASTE> mode
+set pastetoggle=<F2>
+"}}}
+
+"{{{ Misc
+"{{{ ClearRegisters function
+function! ClearRegisters()
+	redir => l:register_out
+	silent register
+	redir end
+	let l:register_list = split(l:register_out, '\n')
+	call remove(l:register_list, 0)
+	call map(l:register_list, "substitute(v:val, '^.\\(.\\).*', '\\1', '')")
+	call filter(l:register_list, 'v:val !~ "[%#=.:]"')
+	for elem in l:register_list
+		execute 'let @'.elem.'= ""'
+	endfor
+endfunction
+"}}}
+"{{{ Insert timestamp
+nnoremap <F5> "=strftime("%c")<CR>P
+"}}}
+"{{{ Clear last search string
+nnoremap <leader>cl :let @/=""<cr>
+"}}}
+"{{{ Fix for lxterminal(nvim)
+set guicursor=
+"}}}
+"}}}
+
+"{{{ Netrw Explorer (Prefer NERDTree)
+let g:netrw_banner = 0
+let g:netrw_browse_split = 3
+let g:netrw_hide = 1
+let g:netrw_winsize = 20
+"map <c-w>o :Vexplore ~<cr>
+"map <c-w>p :Vexplore<cr>
+"}}}
+
+"{{{ Hybrid Line numbering
+set number relativenumber
+augroup numbertoggle
+  au!
+  au BufEnter,FocusGained,InsertLeave * set relativenumber
+  au BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+"}}}
+
+"{{{ Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"{{{ Core Plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+"}}}
+"{{{ Extra Plugins
+Plugin 'qpkorr/vim-bufkill'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'easymotion/vim-easymotion'
+" Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'vim-scripts/EnhCommentify.vim'
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'w0rp/ale'
+Plugin 'vim-scripts/git_patch_tags.vim'
+"}}}
+call vundle#end()
+"}}}
+
+"{{{ Solarized
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+"}}}
+
+"{{{ Airline
+let g:airline_powerline_fonts=1
+let g:airline_theme='murmur'
+let g:airline#extensions#tagbar#enabled=1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#hunks#enabled=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_buffers=1
+let g:airline#extensions#bufferline#enabled=1
+let g:airline#extensions#whitespace#enabled=1
+" let g:airline#extensions#whitespace#enabled=0
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.maxlinenr = ''
+"}}}
+
+"{{{ GitGutter
+"Alway show signcolumn
+"set signcolumn=yes
+" Effects single line :map results output
+" Unset events for gitgutter from ~/.vim/after/plugin/gitgutter.vim
+" and use buffer write for recalculating hunks
+" set updatetime=500
+
+"Reload hunks on buffer write
+au BufWritePost * GitGutter
+
+nmap <leader>hs <Plug>GitGutterStageHunk
+nmap <leader>hr <Plug>GitGutterUndoHunk
+nmap <leader>hv <Plug>GitGutterPreviewHunk
+nmap <leader>hn <Plug>GitGutterNextHunk
+nmap <leader>hN <Plug>GitGutterPrevHunk
+"}}}
+
+"{{{ NERDTree
+let NERDTreeQuitOnOpen = 0
+let NERDTreeShowLineNumbers = 1
+let NERDTreeMinimalUI = 1
+
+au bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+"}}}
+
+"{{{ IndentGuide
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level=2
+au VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=235
+au VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
+"nnoremap <leader>k :IndentGuidesToggle<cr>
+"}}}
+
+"{{{ TagBar
+let g:tagbar_usearrows = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_compact = 1
+let g:tagbar_show_linenumbers = 3
+let g:tagbar_autopreview = 0
+
+"slow startup while opening heavy file
+"au FileType c,cpp,vim,java,php,js nested :TagbarOpen
+
+nnoremap <leader>tt :TagbarToggle<CR>
+"}}}
+
+"{{{ Navigation
+"{{{ Buffer
+nnoremap <leader>b] :bnext<cr>
+"Buffkill plugin maps <leader>bd
+"nnoremap <leader>bp :bd<cr>
+nnoremap <leader>b[ :bprev<cr>
+"}}}
+"{{{ Tabs
+nnoremap <leader>tn :tabnew <cr>
+nnoremap <leader>t] :tabnext<cr>
+nnoremap <leader>td :tabclose<cr>
+nnoremap <leader>t[ :tabprev<cr>
+"}}}
+"}}}
+
+"{{{ xclip
+if !exists("*CustomXClipCall")
+    function CustomXClipCall() range
+      echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).' | xclip -sel clip')
+    endfunction
+    com -range=% -nargs=0 CustomXClipCall :<line1>,<line2>call CustomXClipCall()
+    vnoremap <leader>qp :CustomXClipCall<cr>
+endif
+"}}}
+
+"{{{ Documentation PDV
+let g:pdv_template_dir = $HOME."/.vim/bundle/pdv/templates"
+nnoremap <buffer> <leader>dx :call pdv#DocumentCurrentLine()<CR>
+"}}}
+
+"{{{ PHPComplete
+let g:phpcomplete_mappings = {
+   \ 'jump_to_def': '<C-W><C-\>',
+   \ 'jump_to_def_split': '<C-]>',
+   \ 'jump_to_def_vsplit': '<C-W><C-]>',
+   \ 'jump_to_def_tabnew': '<C-W><C-[>',
+   \}
+"}}}
+
+"{{{ FileType
+"{{{ ft PHP
+let php_htmlInStrings=1
+let php_baselib=1
+let php_folding=1
+au FileType php setl ofu=phpcomplete#CompletePHP
+au FileType php set shiftwidth=4 tabstop=4 expandtab
+"}}}
+"{{{ ft HTML,CSS,JS,XML,less
+au FileType html,css,javascript,xml,less set tabstop=2 shiftwidth=2
+"}}}
+"}}}
+
+"{{{ EnhancedCommentify
+let g:EnhCommentifyMultiPartBlocks = 'yes'
+let g:EnhCommentifyIgnoreWS = 'no'
+let g:EnhCommentifyPretty = 'yes'
+let g:EnhCommentifyUseSyntax = 'yes'
+"}}}
+
+"{{{ Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:ale_completion_enabled = 1
+"}}}
+
+" vim:ft=vim:fdm=marker

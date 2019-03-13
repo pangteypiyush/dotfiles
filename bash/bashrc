@@ -1,0 +1,52 @@
+#{{{ Variables / Defaults
+HISTCONTROL=ignoreboth
+HISTSIZE=10000
+HISTFILESIZE=10000
+
+DEFAULT_PROJECT='tp'
+_BOOST_BASE=/srv/vhosts
+PS1_SEP=""
+#}}}
+
+#{{{ Capability
+shopt -s checkwinsize
+shopt -s histappend
+set -o vi
+# bind 'set show-mode-in-prompt on'
+# shopt -s dotglob nullglob #( include hidden files in globs, but []regex fails)
+#}}}
+
+#{{{ Util functions
+function motd(){
+	clear
+	cat ~/.bash/motd 2>/dev/null
+	[[ $(command -v fortune) ]] && \
+		fortune -a work people paradoxum -s -n 200 | fold -w 60 -s
+}
+#}}}
+
+#{{{ Default color aliases
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+#}}}
+
+#{{{ User aliases and exports
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -f ~/.bash_exports ]] && . ~/.bash_exports
+#}}}
+
+#{{{ External sourced files
+source /etc/profile.d/vte.sh
+[[ -z "$_PROJECT" ]] && _PROJECT=$DEFAULT_PROJECT
+source /usr/share/bash-boostsales/boostsales_bash_mod && __init_boost_project
+source /usr/share/bash-boostsales/boostsales_bash_ps1
+#}}}
+
+motd
+
+# vim:fdm=marker
