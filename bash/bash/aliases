@@ -1,0 +1,17 @@
+alias bb='cd ..'
+alias lsd="ls -altr | grep ^d"
+alias ll="ls -haltGgr --group-directories-first"
+alias search="grep -inr"
+alias perm="stat -c '%n %U:%G %a (%y)'"
+alias sw='sudo -u http -g http '
+alias mischief_managed="echo -e '\e(0'"
+
+alias ipinfo="curl -s ipinfo.io | cat ip | jq -r '.ip, .region, .country, .org'"
+alias pastebin="ix"
+alias wen="history | sed 's/[0-9 ]\{1,\}//' | grep -i"
+alias timestamp="date '+%b%d_%H%M'"
+alias serve="ruby -run -ehttpd . -p8000"
+
+alias tellmewhendone="notify-send -a 'Terminal Task' 'Done'"
+
+# vim:ft=sh

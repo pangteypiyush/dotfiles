@@ -1,0 +1,8 @@
+export VISUAL=vim
+export EDITOR=vim
+
+COMPOSER_DIR=~/.config/composer
+
+export PATH=$PATH:$COMPOSER_DIR/vendor/bin
+
+# vim:ft=sh
