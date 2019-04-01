@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Cmus
+Icon=deadbeef-symbolic
+GenericName=Terminal Music Player
+Exec=/usr/bin/lxterminal -t "Cmus"  -e /usr/bin/cmus
+Categories=AudioVideo;Player;Audio;
