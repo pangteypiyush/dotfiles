@@ -32,7 +32,7 @@ set autoread
 set hidden
 
 set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
+set completeopt=longest,menuone,preview
 filetype indent on
 filetype plugin on
 syntax enable
@@ -107,20 +107,36 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-scripts/git_patch_tags.vim'
+Plugin 'kablamo/vim-git-log'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'qpkorr/vim-bufkill'
+Plugin 'tpope/vim-surround'
+" Plugin 'jiangmiao/auto-pairs'
+Plugin 'cohama/lexima.vim'
+Plugin 'vim-scripts/EnhCommentify.vim'
 "}}}
 "{{{ Extra Plugins
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'w0rp/ale'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'easymotion/vim-easymotion'
-" Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'vim-scripts/EnhCommentify.vim'
+Plugin 'vimwiki/vimwiki'
+Plugin 'junegunn/fzf.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'honza/vim-snippets'
+"}}}
+"{{{ PHP
 Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'w0rp/ale'
-Plugin 'vim-scripts/git_patch_tags.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'lvht/phpcd.vim'
+"}}}
+"{{{ CSS LESS
+Plugin 'groenewege/vim-less'
+Plugin 'hail2u/vim-css3-syntax'
 "}}}
 call vundle#end()
 "}}}
@@ -233,12 +249,12 @@ nnoremap <buffer> <leader>dx :call pdv#DocumentCurrentLine()<CR>
 "}}}
 
 "{{{ PHPComplete
-let g:phpcomplete_mappings = {
-   \ 'jump_to_def': '<C-W><C-\>',
-   \ 'jump_to_def_split': '<C-]>',
-   \ 'jump_to_def_vsplit': '<C-W><C-]>',
-   \ 'jump_to_def_tabnew': '<C-W><C-[>',
-   \}
+" let g:phpcomplete_mappings = {
+"    \ 'jump_to_def': '<C-W><C-\>',
+"    \ 'jump_to_def_split': '<C-]>',
+"    \ 'jump_to_def_vsplit': '<C-W><C-]>',
+"    \ 'jump_to_def_tabnew': '<C-W><C-[>',
+"    \}
 "}}}
 
 "{{{ FileType
@@ -246,11 +262,11 @@ let g:phpcomplete_mappings = {
 let php_htmlInStrings=1
 let php_baselib=1
 let php_folding=1
-au FileType php setl ofu=phpcomplete#CompletePHP
+" au FileType php setl ofu=phpcomplete#CompletePHP
 au FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
 "{{{ ft HTML,CSS,JS,XML,less
-au FileType html,css,javascript,xml,less set tabstop=2 shiftwidth=2
+au FileType html,css,javascript,xml,less set tabstop=2 shiftwidth=2 expandtab
 "}}}
 "}}}
 
@@ -263,7 +279,28 @@ let g:EnhCommentifyUseSyntax = 'yes'
 
 "{{{ Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+"}}}
+
+"{{{ ALE
 let g:ale_completion_enabled = 1
+let g:ale_php_phpmd_ruleset = "/srv/vhosts/migrate/vendor/magento/magento2-base/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml"
+" let g:ale_linters = {
+" \   'php': ['phpmd']
+" \}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'php': ['php_cs_fixer'],
+\}
+"}}}
+
+"{{{ Neosnippets and vim-snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 "}}}
 
 " vim:ft=vim:fdm=marker
