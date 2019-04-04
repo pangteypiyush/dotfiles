@@ -5,7 +5,7 @@ set nocompatible
 "set clipboard=unnamedplus
 
 set colorcolumn=81
-set t_Co=256
+set termguicolors
 
 set tabstop=4
 set shiftwidth=4
@@ -98,9 +98,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "{{{ Core Plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -110,11 +108,13 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/git_patch_tags.vim'
 Plugin 'kablamo/vim-git-log'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'tpope/vim-surround'
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'cohama/lexima.vim'
 Plugin 'vim-scripts/EnhCommentify.vim'
+Plugin 'morhetz/gruvbox'
 "}}}
 "{{{ Extra Plugins
 Plugin 'Shougo/deoplete.nvim'
@@ -124,14 +124,14 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'Shougo/neosnippet.vim'
-Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
+Plugin 'Workspace-Manager'
 "}}}
 "{{{ PHP
 Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
 Plugin 'StanAngeloff/php.vim'
-Plugin 'rayburgemeestre/phpfolding.vim'
+" Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'lvht/phpcd.vim'
 "}}}
 "{{{ CSS LESS
@@ -141,15 +141,14 @@ Plugin 'hail2u/vim-css3-syntax'
 call vundle#end()
 "}}}
 
-"{{{ Solarized
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+"{{{ Colorscheme
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 "}}}
 
 "{{{ Airline
 let g:airline_powerline_fonts=1
-let g:airline_theme='murmur'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tagbar#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#hunks#enabled=1
@@ -286,9 +285,9 @@ let g:deoplete#ignore_sources.php = ['omni']
 "{{{ ALE
 let g:ale_completion_enabled = 1
 let g:ale_php_phpmd_ruleset = "/srv/vhosts/migrate/vendor/magento/magento2-base/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml"
-" let g:ale_linters = {
-" \   'php': ['phpmd']
-" \}
+let g:ale_linters = {
+\   'php': ['php', 'phpcs', 'phpmd']
+\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'php': ['php_cs_fixer'],
@@ -297,6 +296,8 @@ let g:ale_fixers = {
 
 "{{{ Neosnippets and vim-snippets
 let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#enable_complete_done = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
