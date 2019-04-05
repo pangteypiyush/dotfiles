@@ -74,6 +74,6 @@ transparency=94
 
 [style/font]
 allow-bold=true
-palette='#1c1c1c1c1c1c:#d7d700000000:#5f5eafaf0000:#fcfcbab90403:#00005f5fffff:#757550507b7b:#fcfcbab90403:#f3f3f3f3f3f3:#f3f3f3f3f3f3:#d7d700000000:#5f5eafaf0000:#fcfcbab90403:#00005f5fffff:#adad7f7fa8a8:#fcfcbab90403:#f3f3f3f3f3f3:#bbbbbbbbbbbb:#262626262626'
+palette='#262626262626:#cccc24241d1d:#989897971a19:#d7d799992120:#454585858888:#b1b162618685:#68689d9d6a6a:#a8a899998484:#929283837474:#cccc24241d1d:#b8b8bbbb2626:#fafabdbc2f2f:#8383a5a59898:#d3d386869b9b:#8e8ec0c07c7b:#ebebdbdbb2b2:#ebebdbdbb2b2:#282828282828'
 palette-name='Custom'
-style='SauceCodePro Nerd Font Mono 11'
+style='Source Code Pro 11'
