@@ -104,37 +104,63 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+
+" VCS
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-scripts/git_patch_tags.vim'
 Plugin 'kablamo/vim-git-log'
-Plugin 'nathanaelkane/vim-indent-guides'
+
+" Indent
+" Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Yggdroot/indentLine'
+
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'tpope/vim-surround'
+
+" Autoclose
 " Plugin 'jiangmiao/auto-pairs'
 Plugin 'cohama/lexima.vim'
+
+" Comment
 Plugin 'vim-scripts/EnhCommentify.vim'
+
+" Colorscheme
 Plugin 'morhetz/gruvbox'
 "}}}
 "{{{ Extra Plugins
+" Completion
 Plugin 'Shougo/deoplete.nvim'
+
+" Lint and  Fix
 Plugin 'w0rp/ale'
+
+" Misc
 Plugin 'junegunn/vim-easy-align'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
+
+" Snippets
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
+
+" Project management
 Plugin 'Workspace-Manager'
 "}}}
 "{{{ PHP
+" Documentation
 Plugin 'tobyS/vmustache'
 Plugin 'tobyS/pdv'
+
+" Filetype
 Plugin 'StanAngeloff/php.vim'
 " Plugin 'rayburgemeestre/phpfolding.vim'
+
+" Completion
 Plugin 'lvht/phpcd.vim'
 "}}}
 "{{{ CSS LESS
+" Filetype
 Plugin 'groenewege/vim-less'
 Plugin 'hail2u/vim-css3-syntax'
 "}}}
