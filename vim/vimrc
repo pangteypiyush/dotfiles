@@ -315,7 +315,7 @@ let g:deoplete#ignore_sources.php = ['omni']
 
 "{{{ ALE
 let g:ale_completion_enabled = 1
-let g:ale_php_phpmd_ruleset = "/srv/vhosts/migrate/vendor/magento/magento2-base/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml"
+autocmd BufNewFile,BufRead /opt/srv/vhosts/migrate/* let g:ale_php_phpmd_ruleset="/opt/srv/vhosts/migrate/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml"
 let g:ale_linters = {
 \   'php': ['php', 'phpcs', 'phpmd']
 \}
