@@ -207,7 +207,7 @@ nmap <leader>hs <Plug>GitGutterStageHunk
 nmap <leader>hr <Plug>GitGutterUndoHunk
 nmap <leader>hv <Plug>GitGutterPreviewHunk
 nmap <leader>hn <Plug>GitGutterNextHunk
-nmap <leader>hN <Plug>GitGutterPrevHunk
+nmap <leader>hp <Plug>GitGutterPrevHunk
 "}}}
 
 "{{{ NERDTree
@@ -245,16 +245,16 @@ nnoremap <leader>tt :TagbarToggle<CR>
 
 "{{{ Navigation
 "{{{ Buffer
-nnoremap <leader>b] :bnext<cr>
+nnoremap <leader>bn :bnext<cr>
 "Buffkill plugin maps <leader>bd
 "nnoremap <leader>bp :bd<cr>
-nnoremap <leader>b[ :bprev<cr>
+nnoremap <leader>bp :bprev<cr>
 "}}}
 "{{{ Tabs
-nnoremap <leader>tn :tabnew <cr>
-nnoremap <leader>t] :tabnext<cr>
+nnoremap <leader>tc :tabnew <cr>
+nnoremap <leader>tn :tabnext<cr>
 nnoremap <leader>td :tabclose<cr>
-nnoremap <leader>t[ :tabprev<cr>
+nnoremap <leader>tp :tabprev<cr>
 "}}}
 "}}}
 
