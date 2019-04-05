@@ -273,7 +273,8 @@ endif
 "}}}
 
 "{{{ Documentation PDV
-let g:pdv_template_dir = $HOME."/.vim/bundle/pdv/templates"
+" let g:pdv_template_dir = $HOME."/.vim/bundle/pdv/templates"
+let g:pdv_template_dir = $HOME."/.vim/pdv_templates"
 nnoremap <buffer> <leader>dx :call pdv#DocumentCurrentLine()<CR>
 "}}}
 
