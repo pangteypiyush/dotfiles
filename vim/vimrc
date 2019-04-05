@@ -323,6 +323,13 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'php': ['php_cs_fixer'],
 \}
+let g:ale_list_window_size = 5
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
+nmap <silent> <leader>an <Plug>(ale_next_wrap)
+nmap <silent> <leader>ad <Plug>(ale_detail)
 "}}}
 
 "{{{ Neosnippets and vim-snippets
