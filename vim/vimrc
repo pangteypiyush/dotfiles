@@ -221,13 +221,17 @@ nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 "}}}
 
-"{{{ IndentGuide
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level=2
-au VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=235
-au VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
-"nnoremap <leader>k :IndentGuidesToggle<cr>
+"{{{ IndentGuide (Prefer IndentLine)
+" let g:indent_guides_auto_colors = 0
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_start_level=2
+"}}}
+
+"{{{ IndentLine
+" let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
 "}}}
 
 "{{{ TagBar
