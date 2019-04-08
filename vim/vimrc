@@ -139,6 +139,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
+Plugin 'mhinz/vim-startify'
 
 " Snippets
 Plugin 'Shougo/neosnippet.vim'
@@ -323,6 +324,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'php': ['php_cs_fixer'],
 \}
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:ale_list_window_size = 5
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -340,6 +343,10 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+"}}}
+
+"{{{ Startify
+let g:startify_custom_header = ''
 "}}}
 
 " vim:ft=vim:fdm=marker
