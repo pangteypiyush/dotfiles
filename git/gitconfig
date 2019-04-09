@@ -1,0 +1,33 @@
+[core]
+	editor = nvim
+[color]
+	ui = auto
+[push]
+	default = simple
+[log]
+	abbrevCommit = 1
+[alias]
+	lol = log --graph --decorate --pretty=oneline --all
+[diff]
+	tool = vimdiff
+[user]
+	email = gokuvsvegita@gmail.com
+	name = Piyush Pangtey
+	signingKey =
+[alias]
+	lol = log --graph --decorate --pretty=oneline --all
+	lolb = log --graph --decorate --pretty=oneline
+	lolv = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lolvv = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	logstat = log --stat --summary --all
+	whatadded = log --diff-filter=A
+	serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+	hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+[merge]
+	conflictstyle = diff3
+[pager]
+	show = vim -c '%sm/\\e.\\{-}m//g' -c 'set ft=diff' +1 -
+[help]
+	autocorrect = 30
+[commit]
+	template = ~/.gitmessage
