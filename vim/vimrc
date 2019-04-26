@@ -279,6 +279,7 @@ nnoremap <buffer> <leader>dx :call pdv#DocumentCurrentLine()<CR>
 let php_htmlInStrings=1
 let php_baselib=1
 let php_folding=1
+let g:PHP_vintage_case_default_indent=1
 " au FileType php setl ofu=phpcomplete#CompletePHP
 au FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
