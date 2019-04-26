@@ -284,7 +284,7 @@ let g:PHP_vintage_case_default_indent=1
 au FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
 "{{{ ft HTML,CSS,JS,XML,less
-au FileType html,css,javascript,xml,less set tabstop=2 shiftwidth=2 expandtab
+au FileType html,css,javascript,xml,less,json set tabstop=2 shiftwidth=2 expandtab
 "}}}
 "}}}
 
