@@ -1,0 +1,6 @@
+! keycode 66 = Caps_Lock
+! keycode 9 = Escape
+! keycode 108 = Alt_R
+
+keysym Caps_Lock = Escape
+clear lock
