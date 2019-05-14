@@ -126,6 +126,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'luochen1990/rainbow'
 
 " Snippets
 Plugin 'Shougo/neosnippet.vim'
@@ -344,6 +345,10 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 "{{{ Startify
 let g:startify_custom_header = ''
+"}}}
+
+"{{{ Rainbow
+let g:rainbow_active = 1
 "}}}
 
 " vim:ft=vim:fdm=marker
