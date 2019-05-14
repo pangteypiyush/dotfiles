@@ -132,6 +132,9 @@ Plugin 'luochen1990/rainbow'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
 
+" Whitespace
+Plugin 'ntpeters/vim-better-whitespace'
+
 " Project management
 " Plugin 'Workspace-Manager'
 "}}}
