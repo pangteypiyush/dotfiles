@@ -32,7 +32,7 @@ set autoread
 set hidden
 
 set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone,preview,noselect
 filetype indent on
 filetype plugin on
 syntax enable
@@ -133,7 +133,7 @@ Plugin 'Shougo/neosnippet.vim'
 Plugin 'honza/vim-snippets'
 
 " Project management
-Plugin 'Workspace-Manager'
+" Plugin 'Workspace-Manager'
 "}}}
 "{{{ PHP
 " Documentation
@@ -150,6 +150,10 @@ Plugin 'lvht/phpcd.vim'
 "{{{ Go
 " Completion
 Plugin 'deoplete-plugins/deoplete-go'
+"}}}
+"{{{ Vim
+" Completion
+Plugin 'Shougo/neco-vim'
 "}}}
 "{{{ CSS LESS
 " Filetype
@@ -180,6 +184,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.maxlinenr = ''
 "}}}
@@ -287,8 +293,8 @@ let g:PHP_vintage_case_default_indent=1
 " au FileType php setl ofu=phpcomplete#CompletePHP
 au FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
-"{{{ ft HTML,CSS,JS,XML,less
-au FileType html,css,javascript,xml,less,json set tabstop=2 shiftwidth=2 expandtab
+"{{{ ft HTML,CSS,JS,XML,less,json,md
+au FileType html,css,javascript,xml,less,json,markdown set tabstop=2 shiftwidth=2 expandtab
 "}}}
 "}}}
 
