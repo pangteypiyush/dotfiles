@@ -146,6 +146,10 @@ Plugin 'StanAngeloff/php.vim'
 " Completion
 Plugin 'lvht/phpcd.vim'
 "}}}
+"{{{ Go
+" Completion
+Plugin 'deoplete-plugins/deoplete-go'
+"}}}
 "{{{ CSS LESS
 " Filetype
 Plugin 'groenewege/vim-less'
@@ -299,6 +303,12 @@ let g:EnhCommentifyUseSyntax = 'yes'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
+"}}}
+"{{{ Go
+let g:deoplete#ignore_sources.go = ['omni']
+let g:deoplete#sources#go#gocode_binary = $HOME.'/go/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+"}}}
 "}}}
 
 "{{{ ALE
