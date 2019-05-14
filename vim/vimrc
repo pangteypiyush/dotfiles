@@ -73,9 +73,9 @@ let g:netrw_winsize = 20
 "{{{ Hybrid Line numbering
 set number relativenumber
 augroup numbertoggle
-  au!
-  au BufEnter,FocusGained,InsertLeave * set relativenumber
-  au BufLeave,FocusLost,InsertEnter   * set norelativenumber
+	au!
+	au BufEnter,FocusGained,InsertLeave * set relativenumber
+	au BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 "}}}
 
@@ -235,7 +235,6 @@ let g:tagbar_autopreview = 0
 
 "slow startup while opening heavy file
 "au FileType c,cpp,vim,java,php,js nested :TagbarOpen
-
 nnoremap <leader>tt :TagbarToggle<CR>
 "}}}
 
@@ -256,11 +255,11 @@ nnoremap <leader>tp :tabprev<cr>
 
 "{{{ xclip
 if !exists("*CustomXClipCall")
-    function CustomXClipCall() range
-      echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).' | xclip -sel clip')
-    endfunction
-    com -range=% -nargs=0 CustomXClipCall :<line1>,<line2>call CustomXClipCall()
-    vnoremap <leader>qp :CustomXClipCall<cr>
+	function CustomXClipCall() range
+		echo system('echo '.shellescape(join(getline(a:firstline, a:lastline), "\r")).' | xclip -sel clip')
+	endfunction
+	com -range=% -nargs=0 CustomXClipCall :<line1>,<line2>call CustomXClipCall()
+	vnoremap <leader>qp :CustomXClipCall<cr>
 endif
 "}}}
 
@@ -303,6 +302,7 @@ let g:EnhCommentifyUseSyntax = 'yes'
 "{{{ Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+"{{{ PHP
 let g:deoplete#ignore_sources.php = ['omni']
 "}}}
 "{{{ Go
