@@ -31,7 +31,6 @@ set autoread
 "allow buffer change even if changes were made
 set hidden
 
-set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview,noselect
 filetype indent on
 filetype plugin on
@@ -151,8 +150,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'lvht/phpcd.vim'
 "}}}
 "{{{ Go
-" Completion
-Plugin 'deoplete-plugins/deoplete-go'
+Plugin 'fatih/vim-go'
 "}}}
 "{{{ Vim
 " Completion
@@ -315,9 +313,7 @@ let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
 "}}}
 "{{{ Go
-let g:deoplete#ignore_sources.go = ['omni']
-let g:deoplete#sources#go#gocode_binary = $HOME.'/go/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 "}}}
 "}}}
 
