@@ -120,8 +120,8 @@ class = Dunst
 # icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 [frame]
-width = 3
-color = "#8EC07C"
+width = 0
+color = "#282828"
 
 [shortcuts]
 # Close notification.
@@ -134,19 +134,16 @@ close = ctrl+space
 history = ctrl+shift+space
 
 [urgency_low]
-frame_color = "#282828"
 background = "#282828"
 foreground = "#ebdbb2"
 timeout = 30
 
 [urgency_normal]
-frame_color = "#8ec07c"
 background = "#8ec07c"
 foreground = "#282828"
 timeout = 60
 
 [urgency_critical]
-frame_color = "#fe8019"
 background = "#fe8019"
 foreground = "#282828"
 timeout = 120
