@@ -4,7 +4,7 @@ font = Quicksand 10
 allow_markup = yes
 plain_text = no
 
-format = "%a\n<b>%s</b>\n%b\n%p"
+format = "<b><u>%a</u>\n%s</b>\n<i>%b</i>"
 
 always_run_script = true
 
@@ -44,7 +44,7 @@ ignore_newline = no
 stack_duplicates = yes
 hide_duplicates_count = yes
 
-geometry = "300x50-0+20"
+geometry = "300x50-10+20"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -155,6 +155,10 @@ timeout = 120
     msg_urgency = critical
     fullscreen = show
 
+[dwm_notify]
+    appname = "*"
+    script = messages.sh
+
 [passmenu]
    appname = "passmenu_rofi"
    set_stack_tag = "confidential"
@@ -164,7 +168,10 @@ timeout = 120
 [slack]
    appname = "Slack"
    set_stack_tag = "message"
-   format = "<b><u>%a</u>\n%s</b>\n<i>%b</i>"
+
+[firefox]
+   appname = "Firefox"
+   set_stack_tag = "browser"
 #    timeout=60
 
 # vim: ft=cfg
