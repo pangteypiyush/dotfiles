@@ -3,9 +3,7 @@ HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=10000
 
-DEFAULT_PROJECT='tp'
 _BOOST_BASE=/srv/vhosts
-PS1_SEP=""
 #}}}
 
 #{{{ Capability
@@ -44,7 +42,7 @@ fi
 source /etc/profile.d/vte.sh
 [[ -z "$_PROJECT" ]] && _PROJECT=$DEFAULT_PROJECT
 source /usr/share/bash-boostsales/boostsales_bash_mod && __init_boost_project
-source /usr/share/bash-boostsales/boostsales_bash_ps1
+source /usr/share/bash-altline/altline && al_zen
 #}}}
 
 motd
