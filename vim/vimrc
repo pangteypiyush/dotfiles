@@ -107,7 +107,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'cohama/lexima.vim'
 
 " Comment
-Plugin 'vim-scripts/EnhCommentify.vim'
+Plugin 'pangteypiyush/EnhCommentify.vim'
 
 " Colorscheme
 Plugin 'morhetz/gruvbox'
