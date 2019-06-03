@@ -152,6 +152,10 @@ Plugin 'lvht/phpcd.vim'
 "{{{ Go
 Plugin 'fatih/vim-go'
 "}}}
+"{{{ Python
+" Completion
+Plugin 'deoplete-plugins/deoplete-jedi'
+"}}}
 "{{{ Vim
 " Completion
 Plugin 'Shougo/neco-vim'
@@ -314,6 +318,9 @@ let g:deoplete#ignore_sources.php = ['omni']
 "}}}
 "{{{ Go
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+"}}}
+"{{{ Python
+let g:deoplete#sources#jedi#show_docstring = 1
 "}}}
 "}}}
 
