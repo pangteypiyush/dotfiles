@@ -4,7 +4,7 @@ set laststatus=2
 set nocompatible
 "set clipboard=unnamedplus
 
-set colorcolumn=81
+set colorcolumn=80
 set termguicolors
 
 set tabstop=4
@@ -297,6 +297,9 @@ let php_folding=1
 let g:PHP_vintage_case_default_indent=1
 " au FileType php setl ofu=phpcomplete#CompletePHP
 au FileType php set shiftwidth=4 tabstop=4 expandtab
+"}}}
+"{{{ ft Python
+au FileType python set shiftwidth=4 tabstop=4 expandtab
 "}}}
 "{{{ ft HTML,CSS,JS,XML,less,json,md
 au FileType html,css,javascript,xml,less,json,markdown set tabstop=2 shiftwidth=2 expandtab
