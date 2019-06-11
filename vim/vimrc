@@ -299,7 +299,7 @@ let g:PHP_vintage_case_default_indent=1
 au FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
 "{{{ ft Python
-au FileType python set shiftwidth=4 tabstop=4 expandtab
+au FileType python set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 "}}}
 "{{{ ft HTML,CSS,JS,XML,less,json,md
 au FileType html,css,javascript,xml,less,json,markdown set tabstop=2 shiftwidth=2 expandtab
