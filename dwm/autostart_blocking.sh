@@ -15,7 +15,7 @@ xinput --set-prop $MOUSE 'libinput Accel Speed' -0.45
 xinput --set-prop $MOUSE 'libinput Accel Profile Enabled' 0 1
 
 # keyboard configuration
-#setxkbmap -option keypad:pointerkeys 
+#setxkbmap -option keypad:pointerkeys
 
 # status
 slstatus &
