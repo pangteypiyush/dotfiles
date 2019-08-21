@@ -33,3 +33,5 @@
 	autocorrect = 30
 [commit]
 	template = ~/.gitmessage
+[url "git@github.com:"]
+	insteadOf = https://github.com/
