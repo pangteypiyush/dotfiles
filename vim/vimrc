@@ -160,6 +160,14 @@ Plugin 'deoplete-plugins/deoplete-jedi'
 " Completion
 Plugin 'Shougo/neco-vim'
 "}}}
+"{{{ Terraform
+" Filetype
+Plugin 'hashivim/vim-terraform'
+"}}}
+"{{{ YAML
+" Filetype
+Plugin 'stephpy/vim-yaml'
+"}}}
 "{{{ CSS LESS
 " Filetype
 Plugin 'groenewege/vim-less'
@@ -300,6 +308,12 @@ au FileType php set shiftwidth=4 tabstop=4 expandtab
 "}}}
 "{{{ ft Python
 au FileType python set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+"}}}
+"{{{ ft YAML
+au FileType yaml set tabstop=2 expandtab shiftwidth=2 softtabstop=2
+"}}}
+"{{{ ft Terraform
+au FileType tf set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 "}}}
 "{{{ ft HTML,CSS,JS,XML,less,json,md
 au FileType html,css,javascript,xml,less,json,markdown set tabstop=2 shiftwidth=2 expandtab
