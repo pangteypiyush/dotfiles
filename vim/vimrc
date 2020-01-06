@@ -214,11 +214,11 @@ let g:airline_symbols.maxlinenr = ''
 "Reload hunks on buffer write
 au BufWritePost * GitGutter
 
-nmap <leader>hs <Plug>GitGutterStageHunk
-nmap <leader>hr <Plug>GitGutterUndoHunk
-nmap <leader>hv <Plug>GitGutterPreviewHunk
-nmap <leader>hn <Plug>GitGutterNextHunk
-nmap <leader>hp <Plug>GitGutterPrevHunk
+nmap <leader>hs <Plug>(GitGutterStageHunk)
+nmap <leader>hr <Plug>(GitGutterUndoHunk)
+nmap <leader>hv <Plug>(GitGutterPreviewHunk)
+nmap <leader>hn <Plug>(GitGutterNextHunk)
+nmap <leader>hp <Plug>(GitGutterPrevHunk)
 "}}}
 
 "{{{ NERDTree
@@ -243,6 +243,9 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+
+" Bugfix for NERDTree
+autocmd BufEnter NERD_tree* :LeadingSpaceDisable
 "}}}
 
 "{{{ TagBar
@@ -301,7 +304,9 @@ nnoremap <buffer> <leader>dx :call pdv#DocumentCurrentLine()<CR>
 "{{{ ft PHP
 let php_htmlInStrings=1
 let php_baselib=1
-let php_folding=1
+" Causes bad indents on try catch and switch
+" let php_folding=1
+let php_folding=0
 let g:PHP_vintage_case_default_indent=1
 " au FileType php setl ofu=phpcomplete#CompletePHP
 au FileType php set shiftwidth=4 tabstop=4 expandtab
@@ -330,7 +335,9 @@ let g:EnhCommentifyUseSyntax = 'yes'
 "{{{ Deoplete
 let g:deoplete#enable_at_startup = 1
 " disable all abbrev
-call deoplete#custom#source('_', 'converters', ['converter_remove_overlap', 'converter_truncate_abbr'])
+call deoplete#custom#source('_', 'converters',
+\ ['converter_remove_overlap', 'converter_truncate_abbr'])
+
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 "{{{ PHP
 let g:deoplete#ignore_sources.php = ['omni']
@@ -368,7 +375,7 @@ nmap <silent> <leader>ad <Plug>(ale_detail)
 "{{{ Neosnippets and vim-snippets
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#enable_completed_snippet = 1
-let g:neosnippet#enable_complete_done = 1
+" let g:neosnippet#enable_complete_done = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
