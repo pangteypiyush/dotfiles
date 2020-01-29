@@ -125,7 +125,9 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mhinz/vim-startify'
-Plugin 'luochen1990/rainbow'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'luochen1990/rainbow'
 
 " Snippets
 Plugin 'Shougo/neosnippet.vim'
