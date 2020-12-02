@@ -4,7 +4,7 @@ alias ls='exa'
 alias ll='ls -halg -snew --group-directories-first'
 alias perm="stat -c '%n %U:%G %a (%y)'"
 
-alias ipinfo="curl -s ipinfo.io | cat ip | jq -r '.ip, .region, .country, .org'"
+alias ipinfo="curl -s ipinfo.io | jq -r '.ip, .region, .country, .org'"
 alias pastebin='ix'
 alias mischief_managed="echo -e '\e(0'"
 alias wen="history | sed 's/[0-9 ]\{1,\}//' | grep -i"
