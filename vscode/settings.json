@@ -241,5 +241,6 @@
     "taskExplorer.enablePerl": false,
     "taskExplorer.enablePowershell": false,
     "taskExplorer.enableBatch": false,
-    "taskExplorer.pathToMake": "make"
+    "taskExplorer.pathToMake": "make",
+    "editor.fontLigatures": "'ccmp' off"
 }
