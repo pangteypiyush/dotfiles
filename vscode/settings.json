@@ -1,0 +1,245 @@
+{
+    "go.docsTool": "gogetdoc",
+    "go.useLanguageServer": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "files.insertFinalNewline": true,
+    "terminal.integrated.fontFamily": "'Source Code Pro', 'SauceCodePro Nerd Font'",
+    "editor.lineNumbers": "relative",
+    "editor.renderWhitespace": "all",
+    "editor.renderLineHighlight": "all",
+    "editor.renderControlCharacters": false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.list.automaticKeyboardNavigation": false,
+    "gitlens.blame.avatars": false,
+    "gitlens.blame.highlight.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.hovers.currentLine.changes": false,
+    "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.details": false,
+    "gitlens.statusBar.reduceFlicker": true,
+    "files.trimTrailingWhitespace": true,
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "l"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h",
+                "n"
+            ],
+            "commands": [
+                "editor.action.dirtydiff.next"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "h",
+                "N"
+            ],
+            "commands": [
+                "editor.action.dirtydiff.previous"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "A",
+                "n"
+            ],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "A",
+                "N"
+            ],
+            "commands": [
+                "editor.action.marker.prevInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "a",
+                "n"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "a",
+                "N"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+                "t"
+            ],
+            "commands": [
+                "outline.focus"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "t"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x"
+            ],
+            "after": [
+                "g",
+                "c",
+                "c"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "r"
+            ],
+            "commands": [
+                "test-explorer.run-this-test"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "f"
+            ],
+            "commands": [
+                "test-explorer.run-this-file"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "a"
+            ],
+            "commands": [
+                "test-explorer.run-all"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "d"
+            ],
+            "commands": [
+                "test-explorer.debug-this-test"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "d",
+                "b"
+            ],
+            "commands": [
+                "editor.debug.action.toggleBreakpoint"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "n"
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "x"
+            ],
+            "after": [
+                "g",
+                "c",
+                "c"
+            ]
+        },
+    ],
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "goTestExplorer.logpanel": true,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "workbench.activityBar.visible": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "taskExplorer.enableAnt": false,
+    "taskExplorer.enableGradle": false,
+    "taskExplorer.enableGulp": false,
+    "taskExplorer.enableGrunt": false,
+    "taskExplorer.enableNsis": false,
+    "taskExplorer.enablePerl": false,
+    "taskExplorer.enablePowershell": false,
+    "taskExplorer.enableBatch": false,
+    "taskExplorer.pathToMake": "make"
+}
