@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob globstar
+
+app_name="Network Connection"
+connection=$(nmcli -t c | cut -d: -f1 | rofi -dmenu -p "$app_name")
+
+[[ -n $connection ]] || exit
+
+nmcli c up "$connection" && \
+	notify-send -a 'NetworkManager' "$app_name" "Connected: $connection"
