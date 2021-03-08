@@ -3,6 +3,7 @@ configuration {
 	width: 77;
 	lines: 8;
 	columns: 2;
+	monitor: -1;
 /*	font: "mono 12";*/
 /*	bw: 1;*/
 /*	location: 0;*/
