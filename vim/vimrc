@@ -404,21 +404,17 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('_', 'converters',
 \ ['converter_remove_overlap', 'converter_truncate_abbr'])
 
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-"{{{ PHP
-let g:deoplete#ignore_sources.php = ['omni']
-"}}}
 "{{{ Go
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 "}}}
 "{{{ Python
 let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#sources#jedi#ignore_errors = v:true
 "}}}
 "}}}
 
 "{{{ ALE
 let g:ale_completion_enabled = 1
-autocmd BufNewFile,BufRead /opt/srv/vhosts/migrate/* let g:ale_php_phpmd_ruleset="/opt/srv/vhosts/migrate/dev/tests/static/testsuite/Magento/Test/Php/_files/phpmd/ruleset.xml"
 let g:ale_linters = {
 \   'php': ['php', 'phpcs', 'phpmd']
 \}
