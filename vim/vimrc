@@ -456,4 +456,7 @@ let g:startify_custom_header = ''
 let g:rainbow_active = 1
 "}}}
 
+"{{{ vimwiki
+let g:vimwiki_list = [{'path': '~/.vim/vimwiki/'}]
+"}}}
 " vim:ft=vim:fdm=marker
