@@ -416,12 +416,13 @@ let g:deoplete#sources#jedi#ignore_errors = v:true
 "{{{ ALE
 let g:ale_completion_enabled = 1
 let g:ale_linters = {
-\   'php': ['php', 'phpcs', 'phpmd']
+\   'php': ['php', 'phpcs', 'phpmd'],
+\   'go': ['golint', 'gofmt', 'gopls', 'goimports', 'govet'],
 \}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'php': ['php_cs_fixer'],
-\   'go': ['gofmt'],
+\   'go': ['gofmt', 'goimports'],
 \}
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
