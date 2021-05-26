@@ -1,20 +1,20 @@
 [core]
 	editor = nvim
+[init]
+	defaultBranch = master
 [color]
 	ui = auto
 [push]
 	default = simple
+[pull]
+	ff = only
 [log]
 	abbrevCommit = 1
-[alias]
-	lol = log --graph --decorate --pretty=oneline --all
 [diff]
 	tool = vimdiff
-[user]
-	email = gokuvsvegita@gmail.com
-	name = Piyush Pangtey
-	signingKey =
+	algorithm = patience
 [alias]
+	diffc = diff --cached
 	lol = log --graph --decorate --pretty=oneline --all
 	lols = log --graph --decorate --pretty=oneline --all --stat
 	lolb = log --graph --decorate --pretty=oneline
@@ -27,11 +27,18 @@
 	hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
 [merge]
 	conflictstyle = diff3
+	tool = vimdiff
+[mergetool]
+	keepBackup = false
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [pager]
 	show = vim -c '%sm/\\e.\\{-}m//g' -c 'set ft=diff' +1 -
 [help]
 	autocorrect = 30
 [commit]
-	template = ~/.gitmessage
+	template = ~/.gitconfig.d/gitmessage
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[includeIf "gitdir:~/Projects/"]
+	path = ~/.gitconfig.d/work.gitconfig
