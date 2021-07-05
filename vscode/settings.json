@@ -243,5 +243,31 @@
     "taskExplorer.pathToMake": "make",
     "editor.fontLigatures": "'ccmp' off",
     "workbench.editor.untitled.hint": "hidden",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+              "-output-directory=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "lastUsed",
     "editor.folding": false
 }
