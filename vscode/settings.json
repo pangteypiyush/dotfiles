@@ -243,6 +243,7 @@
     "taskExplorer.pathToMake": "make",
     "editor.fontLigatures": "'ccmp' off",
     "window.menuBarVisibility": "compact",
+    "workbench.productIconTheme": "fluent-icons",
     "go.toolsManagement.autoUpdate": true,
     "workbench.editor.untitled.hint": "hidden",
     "latex-workshop.latex.tools": [
