@@ -242,5 +242,6 @@
     "taskExplorer.enableBatch": false,
     "taskExplorer.pathToMake": "make",
     "editor.fontLigatures": "'ccmp' off",
+    "workbench.editor.untitled.hint": "hidden",
     "editor.folding": false
 }
