@@ -22,7 +22,6 @@
     "gitlens.statusBar.reduceFlicker": true,
     "files.trimTrailingWhitespace": true,
     "vim.easymotion": true,
-    "vim.foldfix": true,
     "vim.hlsearch": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -242,5 +241,6 @@
     "taskExplorer.enablePowershell": false,
     "taskExplorer.enableBatch": false,
     "taskExplorer.pathToMake": "make",
-    "editor.fontLigatures": "'ccmp' off"
+    "editor.fontLigatures": "'ccmp' off",
+    "editor.folding": false
 }
