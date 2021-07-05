@@ -242,6 +242,7 @@
     "taskExplorer.enableBatch": false,
     "taskExplorer.pathToMake": "make",
     "editor.fontLigatures": "'ccmp' off",
+    "window.menuBarVisibility": "compact",
     "workbench.editor.untitled.hint": "hidden",
     "latex-workshop.latex.tools": [
         {
