@@ -48,7 +48,7 @@
             "before": [
                 "<leader>",
                 "h",
-                "N"
+                "p"
             ],
             "commands": [
                 "editor.action.dirtydiff.previous"
@@ -68,7 +68,7 @@
             "before": [
                 "<leader>",
                 "A",
-                "N"
+                "p"
             ],
             "commands": [
                 "editor.action.marker.prevInFiles"
@@ -88,7 +88,7 @@
             "before": [
                 "<leader>",
                 "a",
-                "N"
+                "p"
             ],
             "commands": [
                 "editor.action.marker.prev"
