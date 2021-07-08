@@ -195,6 +195,26 @@
                 "workbench.action.nextEditorInGroup"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "i"
+            ],
+            "commands": [
+                "references-view.findImplementations"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "r"
+            ],
+            "commands": [
+                "references-view.findReferences"
+            ]
+        },
     ],
     "vim.visualModeKeyBindings": [
         {
