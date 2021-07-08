@@ -262,7 +262,7 @@
     "taskExplorer.enableBatch": false,
     "taskExplorer.pathToMake": "make",
     "editor.fontLigatures": "'ccmp' off",
-    "window.menuBarVisibility": "compact",
+    "window.menuBarVisibility": "toggle",
     "workbench.productIconTheme": "fluent-icons",
     "go.toolsManagement.autoUpdate": true,
     "workbench.editor.untitled.hint": "hidden",
