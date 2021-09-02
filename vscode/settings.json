@@ -297,5 +297,7 @@
     "testExplorer.errorDecoration": false,
     "testExplorer.errorDecorationHover": false,
     "testExplorer.useNativeTesting": true,
-    "editor.folding": false
+    "editor.folding": false,
+    "rust-client.disableRustup": true,
+    "rust.clippy_preference": "on"
 }
