@@ -23,6 +23,7 @@
     "files.trimTrailingWhitespace": true,
     "vim.easymotion": true,
     "vim.hlsearch": true,
+    "vim.startofline": false,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
