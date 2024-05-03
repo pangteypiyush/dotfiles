@@ -1,44 +1,98 @@
-[core]
-	editor = nvim
-[init]
-	defaultBranch = master
+################################################################################
+# Core
+################################################################################
+
 [color]
 	ui = auto
-[push]
-	default = simple
-[pull]
-	ff = only
-[log]
-	abbrevCommit = 1
-[diff]
-	tool = vimdiff
-	algorithm = patience
-[alias]
-	diffc = diff --cached
-	lol = log --graph --decorate --pretty=oneline --all
-	lols = log --graph --decorate --pretty=oneline --all --stat
-	lolb = log --graph --decorate --pretty=oneline
-	lolv = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lolvv = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	logstat = log --stat --summary --all
-	whatadded = log --diff-filter=A
-	fpa = fetch -p --all
-	serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
-	hub = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
-[merge]
-	conflictstyle = diff3
-	tool = vimdiff
-[mergetool]
-	keepBackup = false
-[mergetool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[pager]
-	show = vim -c '%sm/\\e.\\{-}m//g' -c 'set ft=diff' +1 -
-[help]
-	autocorrect = 30
+
 [commit]
 	template = ~/.gitconfig.d/gitmessage
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+	# gpgsign  = true
+
+[credential]
+	helper = store
+
+[diff]
+	algorithm = patience
+
+[gpg]
+	program = gpg
+
+[help]
+	autocorrect = 30
+
+[init]
+	defaultBranch = master
+
+[log]
+	abbrevCommit = 1
+
+[mergetool]
+	keepBackup = false
+
+[pull]
+	ff = only
+
+[push]
+	default = simple
+
+################################################################################
+## nvim
+################################################################################
+
+[core]
+	editor = nvim
+
+[diff]
+	tool = nvimdiff
+
+[merge]
+	tool          = nvimdiff
+	conflictstyle = diff3
+
+[mergetool "nvimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[pager]
+	show = nvim -c '%sm/\\e.\\{-}m//g' -c 'set ft=diff' +1 -
+
+################################################################################
+# Aliases
+################################################################################
+
+[alias]
+	fpa   = fetch -p --all
+	s     = show --pretty=fuller
+	diffc = diff --cached
+
+[alias]
+	lol   = log --graph --decorate --pretty=oneline --all
+	lols  = log --graph --decorate --pretty=oneline --all --stat
+	lolb  = log --graph --decorate --pretty=oneline
+	lolv  = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lolvv = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+[alias]
+	logstat   = log --stat --summary --all
+	whatadded = log --diff-filter=A
+
+[alias]
+	serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+	hub   = !git daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+
+################################################################################
+# Rewrites
+################################################################################
+
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/
+
+################################################################################
+# User profiles
+################################################################################
+
 [includeIf "gitdir:~/Projects/"]
-	path = ~/.gitconfig.d/work.gitconfig
+	path = ~/.gitconfig.d/user/personal
+
+[includeIf "gitdir:~/Public/"]
+	path = ~/.gitconfig.d/user/personal

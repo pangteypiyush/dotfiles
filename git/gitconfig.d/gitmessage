@@ -1,13 +1,34 @@
-#[Bugfix]
-#[Feature]
-#[Update]
-#[Cleanup]
-#[Security]
+# feat:
+# feat():
+# feat!:
+#
+# chore:
+# chore():
+# chore!:
+#
+# fix:
+# fix():
+# fix!:
+#
+# docs:
+# perf:
+# refactor:
+# sec:
 
-# Commit body start{{{
-
+## Add detailed commit description
+#
+#
+## Uncomment to indicate breaking changes in the commit
+# BREAKING CHANGE:
+#
+## List items
 # -
 # *
-# }}}
-# Subject < 60 characters
- 
+#
+## DCO
+# Signed-off-by:
+# Acked-by:
+# Reported-by:
+# Tested-by:
+# Reviewed-by:
+
