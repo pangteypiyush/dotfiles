@@ -3,7 +3,7 @@ HISTCONTROL=ignoreboth
 HISTSIZE=10000
 HISTFILESIZE=10000
 
-_BOOST_BASE=/srv/vhosts
+PROJECT_BASE=~/Projects
 #}}}
 
 #{{{ Capability
@@ -18,8 +18,9 @@ set -o vi
 function motd(){
 	clear
 	cat ~/.bash/motd 2>/dev/null
-	[[ $(command -v fortune) ]] && \
+	if [[ $(command -v fortune) ]]; then
 		fortune -a work people paradoxum -s -n 200 | fold -w 60 -s
+	fi
 }
 #}}}
 
@@ -34,15 +35,15 @@ fi
 #}}}
 
 #{{{ User aliases and exports
-[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-[[ -f ~/.bash_exports ]] && . ~/.bash_exports
+[[ -f ~/.bash/aliases ]] && . ~/.bash/aliases
+[[ -f ~/.bash/exports ]] && . ~/.bash/exports
 #}}}
 
 #{{{ External sourced files
 source /etc/profile.d/vte.sh
 [[ -z "$_PROJECT" ]] && _PROJECT=$DEFAULT_PROJECT
-source /usr/share/bash-boostsales/boostsales_bash_mod && __init_boost_project
-source /usr/share/bash-altline/altline && al_zen
+source /usr/share/bash-project-mod/project-mod && __init_project
+source /usr/local/lib/altline
 #}}}
 
 motd

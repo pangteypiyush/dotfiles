@@ -28,7 +28,7 @@ $if mode=vi
 	"\C-o": "\e-0eli"
 	"\C-a": menu-complete
 #Expand globs before exec Ctrl-e
-	"\C-e": glob-expand-word 
+	"\C-e": glob-expand-word
 	"\C-w":backward-kill-word
 	"\C-n": next-history
 	"\C-p": previous-history

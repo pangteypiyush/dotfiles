@@ -1,6 +1,0 @@
-# Source .bash/aliases (repo)
-[[ -f ~/.bash/aliases ]] && . ~/.bash/aliases
-
-# Define local aliases
-
-# vim:ft=sh

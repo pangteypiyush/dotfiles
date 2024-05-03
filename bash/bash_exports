@@ -1,6 +1,0 @@
-# Source .bash/exports (repo)
-[[ -f ~/.bash/exports ]] && . ~/.bash/exports
-
-# Define local exports
-
-# vim:ft=sh
