@@ -1,0 +1,97 @@
+[
+    {
+        "command": "-workbench.action.terminal.copySelection",
+        "key": "ctrl+c",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "command": "-workbench.action.terminal.paste",
+        "key": "ctrl+v",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "command": "workbench.action.focusActiveEditorGroup",
+        "key": "ctrl+t",
+        "when": "!editorFocus && !terminalFocus"
+    },
+    {
+        "command": "list.find",
+        "key": "ctrl+f",
+        "when": "listFocus && listSupportsFind"
+    },
+    {
+        "command": "-list.find",
+        "key": "ctrl+alt+f",
+        "when": "listFocus && listSupportsFind"
+    },
+    {
+        "command": "-workbench.action.openSettings",
+        "key": "ctrl+,"
+    },
+    {
+        "command": "-workbench.view.extensions",
+        "key": "ctrl+shift+x",
+        "when": "viewContainer.workbench.view.extensions.enabled"
+    },
+    {
+        "command": "-workbench.action.openGlobalKeybindings",
+        "key": "ctrl+k ctrl+s"
+    },
+    {
+        "command": "-workbench.action.keybindingsReference",
+        "key": "ctrl+k ctrl+r"
+    },
+    {
+        "command": "-welcome.showNewFileEntries",
+        "key": "ctrl+alt+win+n"
+    },
+    {
+        "command": "-workbench.action.files.openFolder",
+        "key": "ctrl+k ctrl+o",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "command": "-workbench.action.files.openLocalFolder",
+        "key": "ctrl+k ctrl+o",
+        "when": "remoteFileDialogVisible"
+    },
+    {
+        "command": "-workbench.action.closeGroup",
+        "key": "ctrl+f4",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "command": "-workbench.action.closeActiveEditor",
+        "key": "ctrl+f4"
+    },
+    {
+        "command": "-workbench.action.terminal.killEditor",
+        "key": "ctrl+f4",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "command": "-workbench.action.closeFolder",
+        "key": "ctrl+k f",
+        "when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+    },
+    {
+        "command": "-workbench.action.terminal.sizeToContentWidth",
+        "key": "alt+z",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported"
+    },
+    {
+        "command": "workbench.action.terminal.new",
+        "key": "alt+z",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "command": "-workbench.action.terminal.new",
+        "key": "ctrl+shift+`",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "command": "workbench.action.terminal.kill",
+        "key": "shift+alt+z",
+        "when": "terminalFocus && terminalProcessSupported"
+    }
+]

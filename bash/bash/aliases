@@ -1,18 +1,30 @@
-alias sw='sudo -u http -g http '
-alias search='grep -inr'
-alias ls='exa'
-alias ll='ls -halg -snew --group-directories-first'
+alias ls='eza'
+alias lsd='eza -D'
+alias ll='eza -alg -snew --group-directories-first'
 alias perm="stat -c '%n %U:%G %a (%y)'"
 
 alias ipinfo="curl -s ipinfo.io | jq -r '.ip, .region, .country, .org'"
-alias pastebin='ix'
+# alias pastebin=ix
 alias mischief_managed="echo -e '\e(0'"
 alias wen="history | sed 's/[0-9 ]\{1,\}//' | grep -i"
 alias timestamp="date '+%b%d_%H%M'"
-alias serve="ruby -run -ehttpd . -p8000"
+# alias serve="ruby -run -ehttpd . -p8000"
 
 alias tellmewhendone="notify-send -a 'Terminal Task' 'Done'"
+alias play='asciinema play -i 1 -s 4'
 
 alias copy='xclip -sel clip'
+
+alias less='less -r'
+
+realwhich() { realpath $(which "$1"); }
+
+dus() {
+	local path="$@"
+	if [[ $# -eq 0 ]]; then
+		path=.
+	fi
+	du -sh $path | sort -h
+}
 
 # vim:ft=sh

@@ -1,8 +1,12 @@
 export VISUAL=vim
 export EDITOR=vim
 
-COMPOSER_DIR=~/.config/composer
+export PROJECT_BASE=~/Projects
+export PROJECT_GROUPS=~/.project_groups
 
-export PATH=$PATH:$COMPOSER_DIR/vendor/bin
+export PATH=$PATH:~/.local/bin:~/go/bin
+
+export SUDO_PROMPT="`cat ~/.bash/sudo_prompt`"
+export BUILDKIT_PROGRESS=plain
 
 # vim:ft=sh

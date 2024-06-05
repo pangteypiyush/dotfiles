@@ -1,63 +1,77 @@
 {
-    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.accessibilitySupport": "off",
+    "editor.cursorSmoothCaretAnimation": "explicit",
     "editor.folding": false,
-    "editor.fontFamily": "'JetBrains Mono', 'Source Code Pro'",
+    "editor.fontFamily": "JetBrains Mono, SauceCodePro NF",
     "editor.fontLigatures": true,
     "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": true,
-    "editor.renderControlCharacters": false,
-    "editor.renderLineHighlight": "all",
+    "editor.quickSuggestions": {
+        "comments": "inline"
+    },
+    "editor.renderFinalNewline": "off",
     "editor.renderWhitespace": "all",
-    "editor.scrollBeyondLastLine": false,
-    "editor.stickyScroll.enabled": false,
+    "editor.screenReaderAnnounceInlineSuggestion": false,
+    "editor.smoothScrolling": true,
+    "editor.stickyScroll.maxLineCount": 1,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "comment"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "explorer.confirmDragAndDrop": false,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "gitlens.blame.avatars": false,
-    "gitlens.blame.highlight.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.graph.minimap.additionalTypes": [
-        "localBranches",
-        "stashes",
-        "tags"
-    ],
-    "gitlens.hovers.currentLine.changes": false,
-    "gitlens.hovers.currentLine.details": false,
-    "gitlens.hovers.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.statusBar.reduceFlicker": true,
+    "git.mergeEditor": true,
+    "git.openRepositoryInParentFolders": "never",
+    "go.editorContextMenuCommands": {
+        "fillStruct": true
+    },
+    "go.inlayHints.functionTypeParameters": true,
+    "go.inlayHints.rangeVariableTypes": true,
     "go.toolsManagement.autoUpdate": true,
-    "go.useLanguageServer": true,
-    "latex-workshop.latex.recipe.default": "lastUsed",
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "latexmk",
-            "tools": [
-                "latexmk"
-            ]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "args": [
-                "-output-directory=%OUTDIR%",
-                "%DOC%"
-            ],
-            "command": "xelatex",
-            "env": {},
-            "name": "xelatex"
-        }
-    ],
+    "redhat.telemetry.enabled": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "rust-analyzer.cargo.sysroot": "discover",
+    "rust-analyzer.inlayHints.reborrowHints.enable": "always",
+    "rust-analyzer.testExplorer": true,
     "telemetry.telemetryLevel": "off",
-    "terminal.integrated.fontFamily": "'JetBrains Mono', 'Source Code Pro', 'SauceCodePro Nerd Font'",
-    "vim.camelCaseMotion.enable": true,
+    "terminal.integrated.fontFamily": "JetBrains Mono, SauceCodePro NF",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.splitCwd": "workspaceRoot",
+    "todo-tree.filtering.ignoreGitSubmodules": true,
+    "todo-tree.general.showActivityBarBadge": true,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.highlights.backgroundColourScheme": [
+        "#fb4934",
+        "#fe8019",
+        "#cc241d",
+        "#fabd2f",
+        "#458588",
+        "#665c54",
+        "#928374"
+    ],
+    "todo-tree.highlights.foregroundColourScheme": [
+        "#fbf1c7"
+    ],
+    "todo-tree.highlights.useColourScheme": true,
+    "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
     "vim.easymotion": true,
     "vim.hlsearch": true,
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -169,7 +183,7 @@
                 "r"
             ],
             "commands": [
-                "testing.runAtCursor"
+                "test-explorer.run-this-test"
             ]
         },
         {
@@ -179,7 +193,7 @@
                 "f"
             ],
             "commands": [
-                "testing.runCurrentFile"
+                "test-explorer.run-this-file"
             ]
         },
         {
@@ -189,7 +203,7 @@
                 "a"
             ],
             "commands": [
-                "testing.runAll"
+                "test-explorer.run-all"
             ]
         },
         {
@@ -199,7 +213,7 @@
                 "d"
             ],
             "commands": [
-                "testing.debugTestAtCursor"
+                "test-explorer.debug-this-test"
             ]
         },
         {
@@ -252,7 +266,29 @@
                 "references-view.findReferences"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "c"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.focusActiveEditorGroup"
+            ]
+        }
     ],
+    "vim.replaceWithRegister": true,
+    "vim.showMarksInGutter": true,
     "vim.startofline": false,
     "vim.visualModeKeyBindings": [
         {
@@ -281,11 +317,23 @@
                 "<leader>",
                 "x"
             ]
-        },
+        }
     ],
     "window.menuBarVisibility": "toggle",
+    "workbench.colorCustomizations": {
+        "[Gruvbox Dark Hard]": {
+            "editorInlayHint.background": "#00000040",
+            "editorInlayHint.foreground": "#978774"
+        }
+    },
     "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.editor.alwaysShowEditorActions": true,
     "workbench.editor.empty.hint": "hidden",
     "workbench.sideBar.location": "right",
-    "workbench.startupEditor": "newUntitledFile"
+    "zig.checkForUpdate": false,
+    "zig.formattingProvider": "zls",
+    "zig.initialSetupDone": true,
+    "zig.zls.checkForUpdate": false,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false
 }
