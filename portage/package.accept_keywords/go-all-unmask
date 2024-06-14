@@ -1,0 +1,6 @@
+# enable live build
+#dev-lang/go **
+#dev-go/staticcheck **
+
+# unmask all packages
+dev-go/* ~amd64

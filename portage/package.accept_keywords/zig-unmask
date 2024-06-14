@@ -1,0 +1,6 @@
+# enable livebuild
+# dev-lang/zig **
+# dev-zig/zls **
+
+dev-lang/zig ~amd64
+app-eselect/eselect-zig ~amd64
