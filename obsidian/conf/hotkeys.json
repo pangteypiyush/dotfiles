@@ -1,0 +1,31 @@
+{
+  "app:open-settings": [],
+  "command-palette:open": [
+    {
+      "key": "P",
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ]
+    }
+  ],
+  "editor:delete-paragraph": [],
+  "workspace:close": [
+    {
+      "key": "X",
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ]
+    }
+  ],
+  "file-explorer:new-file": [],
+  "templater-obsidian:create-new-note-from-template": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "X"
+    }
+  ]
+}

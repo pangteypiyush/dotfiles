@@ -1,0 +1,17 @@
+{
+  "newFileLocation": "root",
+  "attachmentFolderPath": "11 - attachments",
+  "livePreview": false,
+  "propertiesInDocument": "visible",
+  "showLineNumber": true,
+  "vimMode": true,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "10 - diagrams/_internal/",
+    "90 - templates/"
+  ],
+  "showRibbon": false,
+  "useTab": false
+}

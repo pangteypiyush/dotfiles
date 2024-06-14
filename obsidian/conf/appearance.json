@@ -1,0 +1,9 @@
+{
+  "cssTheme": "Minimal",
+  "monospaceFontFamily": "JetBrains Mono",
+  "enabledCssSnippets": [
+    "kanban",
+    "header-before",
+    "table-fix"
+  ]
+}

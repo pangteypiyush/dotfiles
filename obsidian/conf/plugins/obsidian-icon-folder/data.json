@@ -1,0 +1,46 @@
+{
+  "settings": {
+    "migrated": 5,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 18,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FasBoxArchive",
+      "FasMattressPillow",
+      "FasArrowsSpin",
+      "FasBookOpen",
+      "FasFile",
+      "FasTags",
+      "FasPaperclip",
+      "FasDiagramProject"
+    ],
+    "recentlyUsedIconsSize": 25,
+    "rules": [],
+    "extraMargin": {
+      "top": 1,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "debugMode": false
+  },
+  "02 - draft": "FasCompassDrafting",
+  "11 - attachments": "FasPaperclip",
+  "01 - content": "FasBookOpen",
+  "20 - tags": "FasTags",
+  "10 - diagrams": "FasDiagramProject",
+  "90 - templates": "FasFile",
+  "99 - triage.md": "FasMattressPillow",
+  "03 - Archived": "FasBoxArchive"
+}
