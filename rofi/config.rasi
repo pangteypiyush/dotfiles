@@ -2,7 +2,7 @@ configuration {
 	show-icons: true;
 	drun-display-format: " {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	cycle: false;
-	combi-modi: "window,drun";
+	combi-modes: "drun,run";
 	display-run: "Execute";
 	display-drun: "Application";
 	display-combi: "Applications";
@@ -14,8 +14,4 @@ configuration {
 listview {
 	lines: 8;
 	columns: 2;
-}
-
-window {
-	width: 77%;
 }

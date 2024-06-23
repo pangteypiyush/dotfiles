@@ -8,7 +8,7 @@
       },
       "mode": "month"
     },
-    "format": "<span color='#fe8019'></span> {:%I:%M}",
+    "format": "<span color='#fe8019'></span> {:%I:%M %p}",
     "format-alt": "<span color='#fe8019'></span> {:%d %m %Y}",
     "tooltip-format": "<tt>{calendar}</tt>"
   },
@@ -16,6 +16,34 @@
     "format": "<span color='#fe8019'></span> {usage}%",
     "format-alt": "<span color='#fe8019'></span> {avg_frequency}GHz",
     "interval": 5
+  },
+  "custom/power": {
+    "format": "<big></big>",
+    "on-click": "~/.config/hypr/scripts/shutdown.sh",
+    "tooltip-format": "Shutdown"
+  },
+  "custom/reboot": {
+    "format": "<big></big>",
+    "on-click": "~/.config/hypr/scripts/reboot.sh",
+    "tooltip-format": "Reboot system"
+  },
+  "custom/user-menu": {
+    "format": "<big></big>",
+    "on-click": "",
+    "tooltip": false
+  },
+  "group/user": {
+    "drawer": {
+      "children-class": "group-power",
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/user-menu",
+      "custom/reboot",
+      "custom/power"
+    ],
+    "orientation": "inherit"
   },
   "height": 16,
   "hyprland/workspaces": {
@@ -47,7 +75,8 @@
     "network",
     "pulseaudio#out",
     "pulseaudio#in",
-    "clock"
+    "clock",
+    "group/user"
   ],
   "network": {
     "format-disconnected": "<span color='#fb4934'>{icon}</span>",
