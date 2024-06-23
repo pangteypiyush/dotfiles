@@ -1,0 +1,98 @@
+{
+  "clock": {
+    "calendar": {
+      "format": {
+        "days": "<span color='#bdae93'><b>{}</b></span>",
+        "today": "<span color='#fe8019'><b>{}</b></span>",
+        "weekdays": "<span color='#8ec07c'><b>{}</b></span>"
+      },
+      "mode": "month"
+    },
+    "format": "<span color='#fe8019'></span> {:%I:%M}",
+    "format-alt": "<span color='#fe8019'></span> {:%d %m %Y}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "cpu": {
+    "format": "<span color='#fe8019'></span> {usage}%",
+    "format-alt": "<span color='#fe8019'></span> {avg_frequency}GHz",
+    "interval": 5
+  },
+  "height": 16,
+  "hyprland/workspaces": {
+    "active-only": true,
+    "all-outputs": false,
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": ""
+    },
+    "on-click": "activate",
+    "on-scroll-down": "hyprctl dispatch workspace m-1",
+    "on-scroll-up": "hyprctl dispatch workspace m+1"
+  },
+  "layer": "top",
+  "modules-center": [],
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "tray",
+    "cpu",
+    "network",
+    "pulseaudio#out",
+    "pulseaudio#in",
+    "clock"
+  ],
+  "network": {
+    "format-disconnected": "<span color='#fb4934'>{icon}</span>",
+    "format-ethernet": "<span color='#689d6a'>{icon}</span>",
+    "format-icons": [
+      ""
+    ],
+    "format-linked": "<span color='#fe8019'>{icon}</span>",
+    "tooltip": false
+  },
+  "position": "top",
+  "pulseaudio#in": {
+    "format": "{format_source}",
+    "format-muted": "{format_source}",
+    "format-source": "<big></big>",
+    "format-source-muted": "<big></big>",
+    "on-click": "pavucontrol",
+    "on-scroll-down": "",
+    "on-scroll-up": "",
+    "tooltip-format": "Open VU Control"
+  },
+  "pulseaudio#out": {
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ],
+      "headphone": ""
+    },
+    "format-muted": "<big>󰝟</big>",
+    "on-click": "pavucontrol",
+    "states": {
+      "loud": 80,
+      "low": 15,
+      "max": 100,
+      "medium": 30,
+      "sweet": 60,
+      "zero": 0
+    },
+    "tooltip-format": "{volume}"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 5
+  }
+}

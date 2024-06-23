@@ -1,0 +1,119 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: SauceCodePro Nerd Font;
+    font-size: 10pt;
+    font-style: normal;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(28, 28, 28, 0.05);
+    color: #d5c4a1;
+}
+
+#workspaces,
+#pulseaudio.out,
+#pulseaudio.in,
+#clock,
+#cpu,
+#tray,
+#network
+{
+    background: rgba(28, 28, 28, 0.65);
+    border-radius: 6px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#workspaces {
+    margin: 5px 5px 5px 10px;
+    padding: 0;
+    border: solid 2px #fe9019;
+    box-shadow: 0px 0px 5px #fe9019;
+}
+
+#workspaces button {
+    color: #d5c4a1;
+    margin: 0;
+    padding: 0.2em 15px 0.2em 13px;
+}
+
+#workspaces button.visible {
+    color: #fe8019;
+}
+
+#workspaces button.empty:not(.visible) {
+    color: #928374;
+}
+
+#workspaces button:hover {
+    background-color: #fe8019;
+    color: #282828;
+}
+
+#pulseaudio.out {
+    border-radius: 6px 0px 0px 6px;
+    margin: 5px 0px 5px 2px;
+    padding: 0px 10px 0px 15px;
+}
+
+#pulseaudio.in {
+    border-radius: 0 6px 6px 0;
+    margin: 5px 2px 5px 0px;
+    padding: 0px 15px 0px 10px;
+}
+
+#pulseaudio.out.zero:not(.muted) {
+    color: #665c54;
+}
+
+#pulseaudio.out.low:not(.muted) {
+    color: #a89984;
+}
+
+#pulseaudio.out.medium:not(.muted) {
+    color: #d5c4a1;
+}
+
+#pulseaudio.out.sweet:not(.muted) {
+    color: #fabd2f;
+}
+
+#pulseaudio.out.loud:not(.muted) {
+    color: #fe8019;
+}
+
+#pulseaudio.out.max:not(.muted) {
+    color: #fb4934;
+}
+
+#pulseaudio.in {
+    color: #fb4934;
+}
+
+#pulseaudio.out.muted,
+#pulseaudio.in.source-muted
+{
+    color: #665c54;
+}
+
+#clock,
+#cpu,
+#tray,
+#network
+{
+    font-weight: bold;
+    padding: 0 15px 0 13px;
+    margin: 5px 2px;
+    border: none;
+}
+
+#tray {
+    background-color: rgba(28, 28, 28, 0.2);
+    padding: 0px 5px;
+}
+
+#clock {
+    margin: 5px 10px 5px 2px;
+}
