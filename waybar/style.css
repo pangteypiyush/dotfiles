@@ -22,7 +22,7 @@ window#waybar {
 #custom-user-menu,
 #custom-power,
 #custom-reboot {
-    background: rgba(28, 28, 28, 0.65);
+    background: rgba(28, 28, 28, 0.83);
     border-radius: 6px;
     font-weight: normal;
     font-style: normal;
@@ -49,7 +49,9 @@ window#waybar {
     color: #928374;
 }
 
-#workspaces button:hover {
+#workspaces button:hover,
+#workspaces button.empty:hover
+{
     background-color: #fe8019;
     color: #282828;
 }
@@ -96,7 +98,7 @@ window#waybar {
 
 #pulseaudio.out.muted,
 #pulseaudio.in.source-muted {
-    color: #665c54;
+    color: #7c6f64;
 }
 
 #clock,

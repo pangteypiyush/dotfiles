@@ -25,7 +25,7 @@
   "custom/reboot": {
     "format": "<big></big>",
     "on-click": "~/.config/hypr/scripts/reboot.sh",
-    "tooltip-format": "Reboot system"
+    "tooltip-format": "Reboot"
   },
   "custom/user-menu": {
     "format": "<big></big>",
