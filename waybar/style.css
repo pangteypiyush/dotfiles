@@ -19,6 +19,7 @@ window#waybar {
 #cpu,
 #tray,
 #network,
+#custom-notification,
 #custom-user-menu,
 #custom-power,
 #custom-reboot {
@@ -105,6 +106,7 @@ window#waybar {
 #cpu,
 #tray,
 #network,
+#custom-notification,
 #custom-user-menu,
 #custom-power,
 #custom-reboot {
@@ -146,4 +148,23 @@ window#waybar {
 
 #custom-reboot:hover {
     background-color: #458588;
+}
+
+#custom-notification.cc-open {
+    background-color: #282828;
+}
+
+#custom-notification.none {
+    color: #7c6f64;
+}
+
+#custom-notification.notification {
+    background-color: #fabd2f;
+    color: #282828;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none
+{
+    color: #cc241d;
 }

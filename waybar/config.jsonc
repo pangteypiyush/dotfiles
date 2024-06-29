@@ -17,6 +17,21 @@
     "format-alt": "<span color='#fe8019'></span> {avg_frequency}GHz",
     "interval": 5
   },
+  "custom/notification": {
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "escape": true,
+    "format": "<big>{icon}</big>",
+    "format-icons": {
+      "none": "",
+      "notification": "",
+      "dnd-none": "",
+      "dnd-notification": ""
+    },
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw"
+  },
   "custom/power": {
     "format": "<big></big>",
     "on-click": "~/.config/hypr/scripts/shutdown.sh",
@@ -75,6 +90,7 @@
     "network",
     "pulseaudio#out",
     "pulseaudio#in",
+    "custom/notification",
     "clock",
     "group/user"
   ],
