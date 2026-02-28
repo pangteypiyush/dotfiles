@@ -1,4 +1,5 @@
 * {
+    all: unset;
     border: none;
     border-radius: 0px;
     font-family: SauceCodePro Nerd Font;
@@ -12,7 +13,10 @@ window#waybar {
     color: #d5c4a1;
 }
 
+window#waybar #tray menu,
+tooltip,
 #workspaces,
+#language,
 #pulseaudio.out,
 #pulseaudio.in,
 #clock,
@@ -27,6 +31,14 @@ window#waybar {
     border-radius: 6px;
     font-weight: normal;
     font-style: normal;
+}
+
+window#waybar #tray menu * {
+    padding: 2.5px 5px;
+}
+
+tooltip * {
+    padding: 5px 10px;
 }
 
 #workspaces {
@@ -102,6 +114,7 @@ window#waybar {
     color: #7c6f64;
 }
 
+#language,
 #clock,
 #cpu,
 #tray,

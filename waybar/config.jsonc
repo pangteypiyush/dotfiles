@@ -61,19 +61,23 @@
     "orientation": "inherit"
   },
   "height": 16,
+  "hyprland/language": {
+    "format": "{}",
+    "on-click": "hyprctl switchxkblayout main next"
+  },
   "hyprland/workspaces": {
     "active-only": true,
     "all-outputs": false,
     "format": "<big>{icon}</big>",
     "format-icons": {
-      "1": "",
+      "1": "󰍹",
       "2": "",
       "3": "",
       "4": "",
       "5": "",
-      "6": "",
+      "6": "󰎇",
       "7": "",
-      "8": ""
+      "8": "󰍩"
     },
     "on-click": "activate",
     "on-scroll-down": "hyprctl dispatch workspace m-1",
@@ -86,6 +90,7 @@
   ],
   "modules-right": [
     "tray",
+    "hyprland/language",
     "cpu",
     "network",
     "pulseaudio#out",
@@ -98,7 +103,7 @@
     "format-disconnected": "<span color='#fb4934'>{icon}</span>",
     "format-ethernet": "<span color='#689d6a'>{icon}</span>",
     "format-icons": [
-      ""
+      "󰈀"
     ],
     "format-linked": "<span color='#fe8019'>{icon}</span>",
     "tooltip": false
@@ -108,7 +113,7 @@
     "format": "{format_source}",
     "format-muted": "{format_source}",
     "format-source": "<big></big>",
-    "format-source-muted": "<big></big>",
+    "format-source-muted": "<big>󰍭</big>",
     "on-click": "pavucontrol",
     "on-scroll-down": "",
     "on-scroll-up": "",
