@@ -2,11 +2,11 @@ configuration {
 	show-icons: true;
 	drun-display-format: " {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	cycle: false;
-	combi-modes: "drun,run";
+	combi-modes: "drun";
 	display-run: "Execute";
 	display-drun: "Application";
 	display-combi: "Applications";
-	monitor: "-2"; /* not sure */
+	monitor: "-4"; /* not sure */
 }
 
 @theme "gruvbox"
