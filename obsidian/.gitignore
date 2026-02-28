@@ -1,5 +1,0 @@
-conf/workspace*.json
-# .obsidian/themes
-
-conf/plugins/*/*
-!conf/plugins/*/data.json
