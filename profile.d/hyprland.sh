@@ -1,3 +1,5 @@
-if [[ "$(tty)" == '/dev/tty1' ]]; then
-    [[ -z "$DISPLAY$SSH_TTY$(pgrep xinit)" ]] && exec Hyprland
+if [[ -z "$DISPLAY" ]] && [[ "$(tty)" == '/dev/tty1' ]] && [ "$XDG_VTNR" -eq 1 ]; then
+    # FIXME: exec doesn't work
+    # exec start-hyprland
+    start-hyprland
 fi

@@ -1,0 +1,26 @@
+configuration {
+	cycle: true;
+	monitor: "-4"; /* not sure */
+}
+
+@theme "gruvbox"
+
+listview {
+	lines: 8;
+	columns: 1;
+	scrollbar: true;
+}
+
+element normal.normal {
+	color: #a89984;
+}
+
+element selected.normal {
+	background-color: #fb4934;
+}
+
+#scrollbar {
+	width:        4px;
+	handle-width: 4px;
+	handle-color: #fb4934;
+}

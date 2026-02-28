@@ -1,0 +1,59 @@
+source = ~/.config/hypr/config/themes/gruvbox.conf
+
+background {
+    monitor =
+    color = $dark0_soft
+}
+
+general {
+    disable_loading_bar = true
+    grace = 0
+}
+
+label {
+    monitor =
+    position = 0, 0
+    halign = center
+    valign = center
+
+    # text = $TIME
+    text = cmd[update:60000] echo "$(date +"%-I:%M %p")"
+
+    color = $light0
+    font_size = 150
+    font_family = JetBrains Mono
+}
+
+input-field {
+    monitor =
+    position = 0, 0
+    halign = center
+    valign = center
+
+
+    fail_text = $FAIL
+    placeholder_text = Password
+
+    outline_thickness = 2
+    dots_size = 0.2
+    dots_spacing = 0.2
+    dots_center = true
+    fade_on_empty = false
+    hide_input = false
+
+    outer_color = $dark0
+    inner_color = $dark2
+    font_color = $light0
+}
+
+label {
+    monitor =
+    position = 0, 0
+    halign = center
+    valign = center
+
+    text = 
+    color = $light4
+    font_size = 50
+    font_family = SauceCodePro Nerd Font
+}

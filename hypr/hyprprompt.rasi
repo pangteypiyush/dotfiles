@@ -12,9 +12,11 @@ listview {
 	lines: 1;
 }
 
+/*
 window {
 	children:[prompt, listview];
 }
+*/
 
 element normal.urgent {
 	color: #fb4934;
