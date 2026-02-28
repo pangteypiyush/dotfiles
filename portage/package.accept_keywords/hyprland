@@ -1,0 +1,36 @@
+gui-wm/hyprland ~amd64
+gui-libs/hyprcursor ~amd64
+dev-libs/hyprland-protocols ~amd64
+gui-libs/hyprutils ~amd64
+dev-util/hyprwayland-scanner ~amd64
+dev-libs/hyprlang ~amd64
+gui-apps/hyprpaper ~amd64
+dev-libs/hyprgraphics ~amd64
+gui-libs/hyprland-qtutils ~amd64
+
+# obsolete deps >=0.42.0
+# gui-libs/wlroots ~amd64
+
+# portal
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+dev-cpp/sdbus-c++
+
+# clipboard
+x11-misc/copyq
+
+# wlroots alternative: aquamarine
+# gui-libs/aquamarine **
+# gui-libs/hyprutils **
+
+# hyprland >= 0.49.0
+dev-libs/wayland-protocols ~amd64
+dev-cpp/glaze ~amd64
+gui-libs/hyprland-qt-support ~amd64
+
+# clipboard
+app-misc/cliphist ~amd64
+gui-apps/wl-clip-persist **
+
+# Not advised
+# CC
+# sys-devel/gcc ~amd64

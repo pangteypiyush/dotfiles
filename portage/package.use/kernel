@@ -1,0 +1,5 @@
+# using grub from Arch instance
+# sys-kernel/installkernel grub
+
+>=sys-kernel/installkernel-38 dracut
+sys-kernel/gentoo-kernel-bin modules-compress

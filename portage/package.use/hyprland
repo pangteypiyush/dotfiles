@@ -1,0 +1,13 @@
+media-libs/mesa X
+gui-wm/hyprland X -qtutils
+
+# X pulled by copyq
+# portal
+dev-qt/qtbase opengl egl eglfs gles2-only X
+dev-qt/qtdeclarative opengl
+sys-apps/xdg-desktop-portal screencast
+gui-libs/xdg-desktop-portal-hyprland qt6
+
+# CopyQ specific
+x11-misc/copyq X
+dev-qt/qtgui -accessibility X

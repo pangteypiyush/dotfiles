@@ -1,0 +1,6 @@
+x11-drivers/nvidia-drivers NVIDIA-r2
+x11-drivers/nvidia-drivers NVIDIA-2023
+x11-drivers/nvidia-drivers NVIDIA-2025
+sys-kernel/linux-firmware linux-fw-redistributable
+app-editors/vscode Microsoft-vscode
+app-office/obsidian Obsidian-EULA

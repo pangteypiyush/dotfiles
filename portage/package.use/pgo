@@ -1,8 +1,0 @@
-# binutils[pgo] masked by llvm profile
-# sys-devel/binutils pgo
-
-app-arch/xz-utils pgo
-dev-lang/python pgo
-
-# pgo removed from bash
-# app-shells/bash pgo

@@ -1,0 +1,5 @@
+x11-libs/gtk+ X
+media-libs/libepoxy X
+x11-libs/cairo X
+media-libs/libglvnd X
+x11-drivers/nvidia-drivers X

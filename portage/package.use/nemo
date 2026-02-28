@@ -1,0 +1,6 @@
+gnome-base/gvfs mtp archive nfs
+
+# required by gnome-extra/nemo-6.4.5
+dev-libs/libxmlb introspection
+x11-libs/cairo -X
+dev-python/pycairo X

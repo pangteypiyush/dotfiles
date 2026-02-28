@@ -1,0 +1,14 @@
+# grub
+# >sys-boot/grub-2.12-r5
+# >=gui-wm/hyprland-0.50.0
+
+# nvidia
+# >x11-drivers/nvidia-drivers-535.230.02
+# =x11-drivers/nvidia-drivers-535.261.03
+
+# swaync
+# >dev-libs/granite-6.2.0
+# >gui-apps/swaync-0.11.0
+
+# vlc
+<=media-video/ffmpeg-6.1.2-r1-1

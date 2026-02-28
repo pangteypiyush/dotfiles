@@ -1,0 +1,7 @@
+# gui-libs/gtk-layer-shell vala introspection
+gui-libs/gtk4-layer-shell vala introspection
+gui-libs/libadwaita vala introspection
+dev-libs/libgee introspection
+gui-libs/libhandy vala introspection 
+>=gui-libs/gtk-4.18.6-r1 introspection
+>=media-libs/graphene-1.10.8-r1 introspection

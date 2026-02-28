@@ -1,0 +1,3 @@
+gui-apps/swaync ~amd64
+dev-libs/granite ~amd64
+gui-libs/gtk4-layer-shell ~amd64

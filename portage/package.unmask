@@ -1,0 +1,20 @@
+x11-drivers/nvidia-drivers:0/590
+x11-drivers/nvidia-drivers:0/580
+# x11-drivers/nvidia-drivers:0/535
+
+
+
+# XXX: remove me after 2026-03-12
+# temporary requirement for hyproverlay
+dev-cpp/glaze
+gui-libs/aquamarine
+gui-libs/hyprutils
+gui-libs/hyprland-qt-support
+gui-libs/hyprcursor
+dev-util/hyprwayland-scanner
+dev-libs/hyprlang
+dev-libs/hyprland-protocols
+dev-libs/hyprgraphics
+gui-wm/hyprland
+gui-libs/xdg-desktop-portal-hyprland
+gui-apps/hyprpaper

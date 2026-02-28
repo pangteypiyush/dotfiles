@@ -1,0 +1,14 @@
+dev-cpp/gtkmm X
+dev-cpp/cairomm X
+
+gui-apps/waybar tray pulseaudio network -upower
+
+dev-libs/libdbusmenu gtk3
+x11-libs/gtk+ introspection
+app-accessibility/at-spi2-core introspection
+x11-libs/gdk-pixbuf introspection
+x11-libs/pango introspection
+media-libs/harfbuzz introspection
+media-plugins/alsa-plugins pulseaudio
+x11-libs/xapp introspection
+dev-libs/glib introspection
