@@ -1,0 +1,18 @@
+# v1.3.0
+auto-update = off
+
+theme                  = Gruvbox Dark Hard
+font-family            = JetBrains Mono
+font-size              = 12
+background-opacity     = 0.97
+background-blur        = true
+window-padding-x       = 10
+window-padding-balance = false
+
+macos-titlebar-style = native
+macos-icon           = blueprint
+
+clipboard-trim-trailing-spaces = true
+
+keybind = alt+t=new_tab
+keybind = alt+w=close_tab:this
