@@ -1,0 +1,73 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#D75F00",
+          "style": "plain",
+          "template": "{{ if .Env.PROJECT }} {{ .Env.PROJECT }}{{ end }}",
+          "type": "text"
+        },
+        {
+          "foreground": "#458588",
+          "options": {
+            "branch_ahead_icon": "",
+            "branch_behind_icon": "",
+            "branch_gone_icon": "",
+            "branch_icon": "",
+            "branch_identical_icon": "",
+            "cherry_pick_icon": "",
+            "commit_icon": "",
+            "fetch_status": true,
+            "merge_icon": "",
+            "rebase_icon": "",
+            "revert_icon": "",
+            "tag_icon": ""
+          },
+          "style": "plain",
+          "template": " \uf1fa {{ .Ref }}",
+          "type": "git"
+        },
+        {
+          "options": {
+            "mapped_locations": {
+              "~": "\uf46d ",
+              "~/Projects/*": "\udb80\udcd6 "
+            },
+            "mapped_locations_enabled": true
+          },
+          "style": "powerline",
+          "template": " {{ .Path }}",
+          "type": "path"
+        },
+        {
+          "foreground": "#D75F00",
+          "style": "plain",
+          "template": "\n \udb81\ude27 ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "segments": [
+        {
+          "foreground": "#CC241D",
+          "style": "plain",
+          "type": "status"
+        }
+      ],
+      "type": "rprompt"
+    }
+  ],
+  "console_title_template": "{{ .Folder }}",
+  "final_space": false,
+  "transient_prompt": {
+    "background": "transparent",
+    "template": "\n {{ .Segments.Path.Path }} \n <#D75F00>\udb81\ude27</> "
+  },
+  "version": 4
+}
